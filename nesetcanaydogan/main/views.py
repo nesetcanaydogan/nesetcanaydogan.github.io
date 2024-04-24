@@ -3,8 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return HttpResponse("welcome to main! in development")
+    return render(request, "main/index.html")
 def projects(request):
-    return HttpResponse("projects page. in development")
-def project(request, number):
-    return HttpResponse(f"project {number}: -PROJECT_NAME-")
+    return HttpResponse("projects page")
+def projectNumber(request, number):
+    return HttpResponse(f"project {number.capitalize()}: -PROJECT_NAME-")
