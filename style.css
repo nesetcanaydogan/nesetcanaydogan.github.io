@@ -33,12 +33,41 @@ nav .links a:hover {
 }
 
 header {
-    padding-top: 1em;
+    margin-top: 1em;
+    height: 10%;
+    width: 100%;
+}
+header img {
+    display: inline-block;
+    width: 100px;
+    height: 90px;
+    position: absolute;
+    margin: 0 50% 0 43.5%;
 }
 
 header .menu i {
+    margin-left: .5em;
     font-size: xx-large;
+    color: #d90429;
 } 
+
+.menu {
+    display: inline-block;
+}
+
+.hire {
+    position: absolute;
+    right: 0;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
 
 #hire {
     @media screen and (max-width: 960px) {
@@ -50,4 +79,17 @@ header .menu i {
         height: 50px;
     }
     border: 0;
+    border-radius: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1em;
+    color: #FFFF;
+    background-color: #d90429;
+    display: inline-block;
+}
+
+#hire:hover {
+    color: #d90429;
+    background-color: #FFFF;
+    border: 1px solid black;
 }
