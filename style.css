@@ -26,6 +26,7 @@ nav .links a {
     text-decoration: none;
     color: #292f36;
     margin: 0 1rem 0 1rem;
+    
 }
 
 nav .links a:hover {
@@ -33,9 +34,10 @@ nav .links a:hover {
 }
 
 header {
-    margin-top: 1em;
+    padding-top: 1em;
     height: 10%;
     width: 100%;
+    background-color: #8d99ae;
 }
 header img {
     display: inline-block;
@@ -90,6 +92,7 @@ button:hover {
     color: #FFFF;
     background-color: #d90429;
     display: inline-block;
+    transition: 1s;
 }
 
 #hire:hover {
@@ -111,10 +114,26 @@ button:hover {
 }
 
 .box-1 {
-    width: 250px;
-    height: 300px;
     display: inline-block;
-    margin: 100px 7rem 0 7rem;
-    background-color: #f2f4f3;
-    border-radius: .5rem;
+    width: 300px;
+    height: 350px;
+    background-color: #edf2f4;
+    position: relative;
+    border-radius: 1rem;
+    margin: 0 6rem 0 6rem;
+}
+
+#about-me {
+    top: 50px;
+}
+#about-me img {
+    margin-top: 1rem;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+.box-1 ul li {
+    list-style-type:square;
 }
