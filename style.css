@@ -102,8 +102,19 @@ button:hover {
     margin-top: 5em;
 }
 
-.main span {
-    width: 100px;
-    height: 50px;
+.container {
     background-color: #8d99ae;
+    text-align: center;
+    border-radius: 1em;
+    margin: 1rem 1rem 1rem 1rem;
+    height: 500px;
+}
+
+.box-1 {
+    width: 250px;
+    height: 300px;
+    display: inline-block;
+    margin: 100px 7rem 0 7rem;
+    background-color: #f2f4f3;
+    border-radius: .5rem;
 }
