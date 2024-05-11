@@ -6,6 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neşetcan Aydoğan</title>
@@ -16,6 +18,9 @@
     }
 
     body {
+        position: relative;
+        margin: 0;
+        padding-bottom: 25px;
         background-color: #151b29;
         display: flex;
         align-items: center;
@@ -33,6 +38,7 @@
         background: none;
         transition: .3s;
     }
+
     body button:hover {
         cursor: pointer;
         border-color: #eafdf8;
@@ -41,10 +47,26 @@
         transition: .3s;
         transform: translateY(-.3em);
     }
+
+    body footer {
+        width: 100%;
+        height: 25px;
+        background-color: #aa7bc3;
+        text-align: center;
+        line-height: 25px;
+        position: fixed;
+        bottom: 0;
+        font-weight: bold;
+        color: #eafdf8;
+        font-family: "Montserrat", sans-serif;
+    }
 </style>
 
 <body>
     <button>IN DEVELOPMENT</button>
+    <footer>
+        2024 | Neşetcan Aydoğan
+    </footer>
 </body>
 
 </html>
