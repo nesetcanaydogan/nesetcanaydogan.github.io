@@ -8,6 +8,8 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,17 +60,110 @@
         position: fixed;
         top: 0;
     }
+
     body nav a {
         text-decoration: none;
         color: #151b29;
         font-size: xx-large;
-        margin: 0 1em 0 1em;
+        margin: 0 .5em 0 .5em;
         transition: .3s;
     }
+
     body nav a:hover {
         color: #eafdf8;
         box-shadow: 0 .5em .8em -.4em #eafdf8;
         transition: .3s;
+    }
+
+    body section .blocks {
+        display: inline-block;
+        width: 300px;
+        height: 400px;
+        background-color: #a1a6b4;
+        border-radius: 5%;
+        margin: 1em 5em 1em 5em;
+        vertical-align: bottom;
+        border: 4px solid #eafdf8;
+    }
+
+    body section .blocks a {
+        text-decoration: none;
+        color: #944bbb;
+        transition: .5s;
+        display: inline-block;
+    }
+
+    body section #github-projects li:hover {
+        transform: translateY(-.3em);
+        transition: .5s;
+        cursor: pointer;
+        color: #151b29;
+    }
+
+    body section .blocks a:hover {
+        transform: translateY(-.3em);
+        transition: .5s;
+        cursor: pointer;
+        color: #151b29;
+    }
+
+    body section .blocks h3 {
+        text-align: center;
+        font-family: "Reddit Sans", sans-serif;
+    }
+
+    body section .blocks ul {
+        list-style: none;
+        display: inline-block;
+        padding-left: 20px;
+        font-weight: bold;
+    }
+
+    body section #about-me ul li {
+        margin: 1em .3em 2em 0;
+    }
+
+    body section #github-projects ul li {
+        margin: 4em .3em 4em 0;
+        color: #151b29;
+    }
+
+    #about-me img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 1px solid #151b29;
+        margin: 0 0 0 100px;
+    }
+
+    body section #skills ul li {
+        margin: 1.5em 0 1.5em 5em;
+    }
+
+    body section #skills ul li i {
+        font-size: large;
+    }
+
+    #hourglass {
+        color: #944bbb;
+    }
+
+    .bottom {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        font-weight: bolder;
+        font-size: large;
+    }
+    .bottom a {
+        text-decoration: none;
+        margin: 0 2em 0 2em;
+        color: #944bbb;
+    }
+    .bottom a:hover {
+        color: #eafdf8;
     }
 
     body footer {
@@ -86,12 +181,53 @@
 
 <body>
     <nav>
-        <a href="https://www.instagram.com/caanaydogan" target="_blank"><i class='bx bxl-instagram-alt' ></i></a>
-        <a href="https://open.spotify.com/user/3625u2mv7r1scq10twm3pmgno?si=394a4b9904a94191" target="_blank"><i class='bx bxl-spotify' ></i></a>
-        <a href="https://github.com/nesetcanaydogan" target="_blank"><i class='bx bxl-github' ></i></a>
-        <a href="mailto:canaydogan0568@gmail.com"><i class='bx bxl-gmail' ></i></a>
+        <a href="https://www.instagram.com/caanaydogan" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="https://open.spotify.com/user/3625u2mv7r1scq10twm3pmgno?si=394a4b9904a94191" target="_blank"><i
+                class='bx bxl-spotify'></i></a>
+        <a href="https://github.com/nesetcanaydogan" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="mailto:canaydogan0568@gmail.com"><i class='bx bxl-gmail'></i></a>
     </nav>
-    <button>IN DEVELOPMENT</button>
+    <section>
+        <div class="blocks" id="about-me">
+            <h3>DESCRIPTION</h3>
+            <hr>
+            <img src="https://previews.dropbox.com/p/thumb/ACS9tPb_T6ajxY_jlY6DLFYno3bVjxY81jfrRebVxZLLTHVNVpBQRZjgU3rDpQnVjKPRn60aUs66i5A3Qnx_XMg8bA4gVauOBfJEcc7j0yJtUnDfUqYYsZ9I2L9rG00xv8aHePjB4g6TQCq3j7905SuMjoORaLseU4foNqb1eQGKYKBE2IOKTETHI5k9ee5511nzhhoaaLlorLBvxENGY-lBj5EO7Njaoc-wx5vfOWoroTTURry7f-NLrs-xTDAm1spwBLcQGxL4BuL5xmOMl_jg243W_9MrTXAY4V77thX7uCMUpRpw--8sSN-I0Tzmd4siGT1WNo9AqPeY-qx9IkQ8/p.jpeg"
+                alt="profileImage">
+            <ul>
+                <li>Nilüfer, Bursa | Uludağ University</li>
+                <li>Electrical-Electronics Engineering</li>
+                <li>Computer Science | Web and Mobile Development</li>
+            </ul>
+        </div>
+        <div class="blocks" id="github-projects">
+            <h3>PROJECTS</h3>
+            <hr>
+            <ul>
+                <li><i class='bx bx-extension'></i>Themed Forum Page [IN-DEV]</li>
+                <li><i class='bx bx-extension'></i>E-Commerce Web Site [IN-DEV]</li>
+                <li><a href="https://github.com/nesetcanaydogan/nesetcanaydogan.github.io"><i
+                            class='bx bxs-extension'></i> Personal Page</a></li>
+            </ul>
+        </div>
+        <div class="blocks" id="skills">
+            <h3>SKILLS</h3>
+            <hr>
+            <ul>
+                <li><i class='bx bxl-html5'></i> HTML</li>
+                <li><i class='bx bxl-css3'></i> CSS</li>
+                <li><i class='bx bxl-bootstrap'></i> Bootstrap</li>
+                <li><i class='bx bxl-javascript'></i> JavaScript</li>
+                <li><i class='bx bxl-python'></i> Python</li>
+                <li><i class='bx bxl-django'></i> Django <i class='bx bxs-hourglass' id="hourglass"></i></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="bottom">
+            <a href="/tr-index.html">TR</a>
+            <a href="">Contact <i class='bx bx-link-external'></i></a>
+        </div>
+    </section>
     <footer>
         2024 | Neşetcan Aydoğan
     </footer>
