@@ -17,166 +17,146 @@
 </head>
 <style>
     * {
-        font-family: "Raleway", sans-serif;
-    }
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+}
 
-    body {
-        position: relative;
-        margin: 0;
-        padding-bottom: 25px;
-        background-color: #151b29;
-        display: flex;
-        align-items: center;
+body {
+    margin: 0;
+    padding-bottom: 25px;
+    background-color: #151b29;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+nav {
+    width: 100%;
+    height: 40px;
+    background-color: #aa7bc3;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #151b29;
+    font-size: large;
+    margin: 0 0.5em;
+    transition: .3s;
+}
+nav a i {
+    font-size: large;
+}
+nav a:hover {
+    color: #eafdf8;
+    box-shadow: 0 .5em .8em -.4em #eafdf8;
+    transition: .3s;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.blocks {
+    width: 90%;
+    max-width: 300px;
+    background-color: #a1a6b4;
+    border-radius: 5%;
+    margin: 1em 0;
+    padding: 1em;
+    border: 4px solid #eafdf8;
+}
+
+.blocks h3 {
+    text-align: center;
+    font-family: "Reddit Sans", sans-serif;
+}
+
+.blocks ul {
+    list-style: none;
+    padding: 0;
+    font-weight: bold;
+}
+
+.blocks ul li {
+    margin: 1em 0;
+}
+
+.blocks a {
+    text-decoration: none;
+    color: #944bbb;
+    transition: .5s;
+    display: inline-block;
+}
+
+.blocks a:hover {
+    transform: translateY(-.3em);
+    transition: .5s;
+    cursor: pointer;
+    color: #151b29;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #151b29;
+    display: block;
+    margin: 0 auto;
+}
+
+.bottom {
+    margin: 1em 0;
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+}
+
+.bottom a {
+    text-decoration: none;
+    margin: 0 1em;
+    color: #944bbb;
+}
+
+.bottom a:hover {
+    color: #eafdf8;
+}
+
+footer {
+    width: 100%;
+    height: 25px;
+    background-color: #aa7bc3;
+    text-align: center;
+    line-height: 25px;
+    position: fixed;
+    bottom: 0;
+    color: #eafdf8;
+    font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 600px) {
+    section {
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
-        height: 100vh;
     }
 
-    body button {
-        border-radius: 0;
-        border: 2px solid #944bbb;
-        width: 175px;
-        height: 45px;
-        font-weight: bolder;
-        color: #944bbb;
-        background: none;
-        transition: .3s;
+    .blocks {
+        margin: 1em 1em;
     }
+}
 
-    body button:hover {
-        cursor: pointer;
-        border-color: #eafdf8;
-        color: #FFFF;
-        box-shadow: 0px .5em .5em -.4em #eafdf8;
-        transition: .3s;
-        transform: translateY(-.3em);
-    }
-
-    body nav {
-        width: 100%;
-        height: 40px;
-        background-color: #aa7bc3;
-        line-height: 40px;
-        text-align: center;
-        position: fixed;
-        top: 0;
-    }
-
-    body nav a {
-        text-decoration: none;
-        color: #151b29;
-        font-size: xx-large;
-        margin: 0 .5em 0 .5em;
-        transition: .3s;
-    }
-
-    body nav a:hover {
-        color: #eafdf8;
-        box-shadow: 0 .5em .8em -.4em #eafdf8;
-        transition: .3s;
-    }
-
-    body section .blocks {
-        display: inline-block;
-        width: 300px;
-        height: 400px;
-        background-color: #a1a6b4;
-        border-radius: 5%;
-        margin: 1em 5em 1em 5em;
-        vertical-align: bottom;
-        border: 4px solid #eafdf8;
-    }
-
-    body section .blocks a {
-        text-decoration: none;
-        color: #944bbb;
-        transition: .5s;
-        display: inline-block;
-    }
-
-    body section #github-projects li:hover {
-        transform: translateY(-.3em);
-        transition: .5s;
-        cursor: pointer;
-        color: #151b29;
-    }
-
-    body section .blocks a:hover {
-        transform: translateY(-.3em);
-        transition: .5s;
-        cursor: pointer;
-        color: #151b29;
-    }
-
-    body section .blocks h3 {
-        text-align: center;
-        font-family: "Reddit Sans", sans-serif;
-    }
-
-    body section .blocks ul {
-        list-style: none;
-        display: inline-block;
-        padding-left: 20px;
-        font-weight: bold;
-    }
-
-    body section #about-me ul li {
-        margin: 1em .3em 2em 0;
-    }
-
-    body section #github-projects ul li {
-        margin: 4em .3em 4em 0;
-        color: #151b29;
-    }
-
-    #about-me img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: 1px solid #151b29;
-        margin: 0 0 0 100px;
-    }
-
-    body section #skills ul li {
-        margin: 1.5em 0 1.5em 5em;
-    }
-
-    body section #skills ul li i {
-        font-size: large;
-    }
-
-    #hourglass {
-        color: #944bbb;
-    }
-
-    .bottom {
-        position: absolute;
-        bottom: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: inline-block;
-        font-weight: bolder;
-        font-size: large;
-    }
-    .bottom a {
-        text-decoration: none;
-        margin: 0 2em 0 2em;
-        color: #944bbb;
-    }
-    .bottom a:hover {
-        color: #eafdf8;
-    }
-
-    body footer {
-        width: 100%;
-        height: 25px;
-        background-color: #aa7bc3;
-        text-align: center;
-        line-height: 25px;
-        position: fixed;
-        bottom: 0;
-        color: #eafdf8;
-        font-family: "Montserrat", sans-serif;
-    }
 </style>
 
 <body>
