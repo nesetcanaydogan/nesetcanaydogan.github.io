@@ -1,0 +1,423 @@
+.mobile,
+.mobile * {
+  box-sizing: border-box;
+}
+.mobile {
+  background: #151b29;
+  height: 2173px;
+  position: relative;
+  overflow: hidden;
+}
+.ellipse-7 {
+  background: rgba(234, 253, 248, 0.9);
+  border-radius: 50%;
+  width: 232px;
+  height: 232px;
+  position: absolute;
+  left: 64px;
+  top: -65px;
+  filter: blur(200px);
+}
+.ellipse-8 {
+  background: rgba(234, 253, 248, 0.9);
+  border-radius: 50%;
+  width: 232px;
+  height: 232px;
+  position: absolute;
+  left: 64px;
+  top: 1504px;
+  filter: blur(200px);
+}
+.ellipse-3 {
+  background: rgba(148, 75, 187, 0.5);
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: -67px;
+  top: 638px;
+  filter: blur(200px);
+}
+.ellipse-6 {
+  background: rgba(170, 123, 195, 0.5);
+  border-radius: 50%;
+  width: 328px;
+  height: 339px;
+  position: absolute;
+  left: 16px;
+  top: 153px;
+  filter: blur(200px);
+}
+.frame-34 {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: -93px;
+  top: 1746px;
+}
+._404-error-tab {
+  flex-shrink: 0;
+  width: 525px;
+  height: 602px;
+  position: relative;
+  object-fit: cover;
+}
+.frame-26 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 276px;
+  position: absolute;
+  left: 42px;
+  top: 100px;
+}
+.frame-25 {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.ne-etcan-aydo-an {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Outfit-Bold", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+  height: 69px;
+}
+.software-developer-ce {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Outfit-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: relative;
+  width: 243px;
+  height: 50px;
+}
+.mask-group {
+  flex-shrink: 0;
+  width: 128px;
+  height: 128px;
+  position: relative;
+  overflow: visible;
+}
+.frame-24 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.about-me {
+  color: #ffffff;
+  text-align: center;
+  font-family: var(--subheader-font-family, "Outfit-Bold", sans-serif);
+  font-size: var(--subheader-font-size, 50px);
+  font-weight: var(--subheader-font-weight, 700);
+  position: relative;
+  align-self: stretch;
+  height: 63px;
+}
+.i-am-can-i-am-a-computer-engineer-student-and-a-software-developer-to-me-these-are-not-the-same-things-coding-a-program-is-a-thing-but-being-an-engineer-and-seeing-that-program-s-background-mechanism-and-managing-that-well-that-is-completely-different {
+  color: #ffffff;
+  text-align: center;
+  font-family: var(--mobile-text-font-family, "Roboto-Light", sans-serif);
+  font-size: var(--mobile-text-font-size, 15px);
+  font-weight: var(--mobile-text-font-weight, 300);
+  position: relative;
+  align-self: stretch;
+  height: 150px;
+}
+.frame-27 {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 255px;
+  position: absolute;
+  left: 52px;
+  top: 690px;
+}
+.frame-5 {
+  background: #944bbb;
+  border-radius: 50px;
+  padding: 17px 25px 17px 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 70px;
+  position: relative;
+}
+.experiences {
+  color: #eafdf8;
+  text-align: left;
+  font-family: "Outfit-Bold", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  position: relative;
+}
+.frame-6 {
+  border-radius: 50px;
+  border-style: solid;
+  border-color: #944bbb;
+  border-width: 1px;
+  padding: 17px 50px 17px 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 70px;
+  position: relative;
+}
+.projects {
+  color: #944bbb;
+  text-align: left;
+  font-family: "Outfit-Bold", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  position: relative;
+}
+.frame-28 {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 351px;
+  position: absolute;
+  left: 4px;
+  top: 910px;
+}
+.fields-of-work-and-interest {
+  color: #ffffff;
+  text-align: center;
+  font-family: var(--subheader-font-family, "Outfit-Bold", sans-serif);
+  font-size: var(--subheader-font-size, 50px);
+  font-weight: var(--subheader-font-weight, 700);
+  position: relative;
+  align-self: stretch;
+  height: 126px;
+}
+.my-current-goal-is-working-as-much-as-i-can-and-become-a-complete-full-stack-web-developer-mobile-developer-also-currently-interesting-in-with-artifical-intelligence-machine-learning-i-know-there-is-still-so-many-things-that-i-have-to-and-want-to-learn {
+  color: #ffffff;
+  text-align: center;
+  font-family: var(--mobile-text-font-family, "Roboto-Light", sans-serif);
+  font-size: var(--mobile-text-font-size, 15px);
+  font-weight: var(--mobile-text-font-weight, 300);
+  position: relative;
+  align-self: stretch;
+  height: 134px;
+}
+.frame-29 {
+  display: flex;
+  flex-direction: row;
+  gap: 31px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 44px;
+  top: 26px;
+}
+.github-logo-60 {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  object-fit: cover;
+}
+.instagram-logo-60 {
+  flex-shrink: 0;
+  width: 69px;
+  height: 70px;
+  position: relative;
+  object-fit: cover;
+}
+.spotify-logo-60 {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  object-fit: cover;
+}
+.frame-31 {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 353px;
+  position: absolute;
+  left: 3px;
+  top: 1256px;
+}
+.currently-working-on-with {
+  color: #ffffff;
+  text-align: center;
+  font-family: var(--subheader-font-family, "Outfit-Bold", sans-serif);
+  font-size: var(--subheader-font-size, 50px);
+  font-weight: var(--subheader-font-weight, 700);
+  position: relative;
+  align-self: stretch;
+  height: 63px;
+}
+.frame-30 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  row-gap: 11px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.javascript-logo-60 {
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  object-fit: cover;
+}
+.nodejs-logo-60 {
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  object-fit: cover;
+}
+.react-logo-60 {
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  object-fit: cover;
+}
+.java-logo-60 {
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  object-fit: cover;
+}
+.python-logo-60 {
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  object-fit: cover;
+}
+.postgresql-logo-60 {
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  object-fit: cover;
+}
+.mongodb-logo-60 {
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  object-fit: cover;
+}
+.git-logo-60 {
+  opacity: 0.8;
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  object-fit: cover;
+}
+.frame-32 {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 1694px;
+}
+.contact {
+  color: #ffffff;
+  text-align: center;
+  font-family: var(--subheader-font-family, "Outfit-Bold", sans-serif);
+  font-size: var(--subheader-font-size, 50px);
+  font-weight: var(--subheader-font-weight, 700);
+  position: relative;
+}
+.frame-33 {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 5px;
+  top: 1770px;
+}
+.canaydogan-0568-gmail-com {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto-ExtraLight", sans-serif;
+  font-size: 25px;
+  font-weight: 200;
+  position: relative;
+}
+
+.header {
+  font-family: 'Outfit', sans-serif;
+}
+
+.inlineText {
+  font-family: 'Roboto', sans-serif;
+}
+
+.light {
+  font-weight: 100;
+}
+
+.link {
+  transition: .3s;
+}
+
+.link:hover {
+  transform: translate(0, -10px);
+  transition: .3s;
+}

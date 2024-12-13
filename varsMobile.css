@@ -1,0 +1,22 @@
+/* Figma Styles of your File */
+:root {
+  /* Colors */
+  /* Fonts */
+  --subheader-font-family: Outfit-Bold, sans-serif;
+  --subheader-font-size: 50px;
+  --subheader-line-height: normal;
+  --subheader-font-weight: 700;
+  --subheader-font-style: normal;
+  --inline-text-font-family: Roboto-Light, sans-serif;
+  --inline-text-font-size: 30px;
+  --inline-text-line-height: normal;
+  --inline-text-font-weight: 300;
+  --inline-text-font-style: normal;
+  --mobile-text-font-family: Roboto-Light, sans-serif;
+  --mobile-text-font-size: 15px;
+  --mobile-text-line-height: normal;
+  --mobile-text-font-weight: 300;
+  --mobile-text-font-style: normal;
+
+  /* Effects */
+}
