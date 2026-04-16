@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neşetcan Aydoğan — Computer Engineering Student</title>
+    <title>Neşetcan Aydoğan | Software & AI Systems Engineer</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
       * {
         margin: 0;
@@ -14,673 +14,894 @@
       }
 
       :root {
-        --bg-primary: #000000;
-        --bg-secondary: #0a0a0a;
-        --text-primary: #ffffff;
-        --text-secondary: #999999;
-        --accent: #6366f1;
-        --card-bg: #111111;
-        --border: #222222;
+        --bg: #ffffff;
+        --text: #000000;
+        --accent: #2d31fa; /* Electric Indigo */
+        --muted: #666666;
+        --border: #e5e5e5;
+        --card-bg: #f9f9f9;
+        --grid-gap: 2rem;
       }
 
-      body.light-mode {
-        --bg-primary: #ffffff;
-        --bg-secondary: #fafafa;
-        --text-primary: #000000;
-        --text-secondary: #666666;
-        --accent: #6366f1;
-        --card-bg: #f5f5f5;
-        --border: #e5e5e5;
+      body.dark-mode {
+        --bg: #000000;
+        --text: #ffffff;
+        --accent: #5c60ff;
+        --muted: #999999;
+        --border: #222222;
+        --card-bg: #0a0a0a;
       }
 
       body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        line-height: 1.6;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
         overflow-x: hidden;
-        transition: background-color 0.6s ease, color 0.6s ease;
+        transition:
+          background-color 0.4s ease,
+          color 0.4s ease;
+        -webkit-font-smoothing: antialiased;
       }
 
-      /* Theme Toggle */
-      .theme-toggle {
+      /* SWISS GRID SYSTEM */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
+        }
+      }
+
+      section {
+        padding: 120px 0;
+        border-top: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--grid-gap);
+      }
+
+      @media (max-width: 768px) {
+        section {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          padding: 80px 0;
+        }
+      }
+
+      /* NAVIGATION & TOGGLES */
+      .controls {
         position: fixed;
         top: 30px;
-        right: 30px;
+        right: 40px;
         z-index: 1000;
+        display: flex;
+        gap: 12px;
+      }
+
+      .btn-toggle {
         background: var(--card-bg);
         border: 1px solid var(--border);
-        border-radius: 50px;
+        color: var(--text);
         padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         cursor: pointer;
-        font-size: 13px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
+        transition: all 0.2s ease;
       }
 
-      .theme-toggle:hover {
-        transform: scale(1.05);
+      .btn-toggle:hover {
         border-color: var(--accent);
+        transform: translateY(-2px);
       }
 
-      /* Hero Section */
-      .hero-section {
+      /* HERO SECTION */
+      .hero {
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 0 20px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .scroll-indicator {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        color: var(--text-secondary);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        animation: float 2s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateX(-50%) translateY(0);
-        }
-        50% {
-          transform: translateX(-50%) translateY(-10px);
-        }
-      }
-
-      .hero-content {
-        max-width: 900px;
-        width: 100%;
-        opacity: 0;
-        animation: fadeInUp 1.2s ease forwards;
-        transform: translateY(40px);
-      }
-
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .hero-label {
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--text-secondary);
-        margin-bottom: 20px;
-        font-weight: 600;
+        align-content: center;
       }
 
       .hero-title {
-        font-size: clamp(40px, 8vw, 100px);
-        font-weight: 700;
-        line-height: 1.1;
-        margin-bottom: 30px;
-        letter-spacing: -0.03em;
+        grid-column: 1 / 13;
+        font-size: clamp(48px, 12vw, 160px);
+        font-weight: 900;
+        line-height: 0.85;
+        letter-spacing: -0.05em;
+        margin-bottom: 40px;
+        text-transform: uppercase;
       }
 
       .hero-subtitle {
-        font-size: clamp(16px, 2.5vw, 24px);
-        color: var(--text-secondary);
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto 40px auto;
-      }
-
-      .highlight-text {
-        color: var(--accent);
+        grid-column: 1 / 10;
+        font-size: clamp(20px, 3vw, 32px);
         font-weight: 500;
+        margin-bottom: 60px;
+        color: var(--muted);
       }
 
-      .hero-meta {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        font-size: 14px;
-        color: var(--text-secondary);
+      @media (max-width: 768px) {
+        .hero-subtitle {
+          grid-column: 1 / -1;
+        }
       }
 
-      .hero-meta a {
+      .summary-box {
+        grid-column: 1 / 10;
+        font-size: 1.25rem;
+        line-height: 1.6;
+        border-left: 4px solid var(--accent);
+        padding-left: 30px;
+        margin-bottom: 80px;
+      }
+
+      @media (max-width: 768px) {
+        .summary-box {
+          grid-column: 1 / -1;
+          font-size: 1.1rem;
+        }
+      }
+
+      .section-label {
+        grid-column: 1 / 13;
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
         color: var(--accent);
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-      }
-
-      .hero-meta a:hover {
-        opacity: 0.7;
-      }
-
-      /* Grid Section */
-      .grid-section {
-        padding: 120px 60px;
-        position: relative;
-        max-width: 1400px;
-        margin: 0 auto;
+        margin-bottom: 20px;
       }
 
       .section-title {
-        font-size: clamp(36px, 5vw, 72px);
-        font-weight: 700;
+        grid-column: 1 / 13;
+        font-size: clamp(32px, 6vw, 80px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
         margin-bottom: 80px;
-        text-align: center;
-        letter-spacing: -0.02em;
+        line-height: 1;
       }
 
-      .floating-grid,
-      .masonry-grid {
+      /* PORTFOLIO & PRODUCTS */
+      .product-grid {
+        grid-column: 1 / 13;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
       }
 
-      /* PARALLAX ve CARD AYARLARI 
-           --tx ve --ty değişkenleri JavaScript ile güncellenecek.
-        */
-      .grid-item,
-      .masonry-item {
+      @media (max-width: 1024px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* CARDS & BENTO */
+      .card,
+      .bento-item {
         background: var(--card-bg);
         border: 1px solid var(--border);
-        padding: 40px;
-        border-radius: 16px;
-
-        /* Başlangıç (Giriş) animasyonu için ayar */
-        opacity: 0;
-        transform: translateY(40px);
-
-        /* Mouse hareketi için değişkenler (Varsayılan 0) */
-        --tx: 0px;
-        --ty: 0px;
-
-        /* Geçişler: 
-               Transform: Parallax için (linear/hızlı olmalı yoksa mouse'un gerisinde kalır)
-               Border/Box-shadow: Hover efekti için
-            */
-        transition: transform 0.1s linear, opacity 0.8s ease,
-          border-color 0.3s ease, box-shadow 0.3s ease;
-
-        height: 100%;
+        padding: 50px;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+          border-color 0.3s ease;
         display: flex;
         flex-direction: column;
+        --mx: 0px;
+        --my: 0px;
+        transform: translate3d(var(--mx), var(--my), 0)
+          translateY(var(--reveal-y, 40px));
+        opacity: var(--reveal-opacity, 0);
       }
 
-      /* GÖRÜNÜR OLDUĞUNDA (Scroll ile geldiğinde)
-           Transform özelliğini JS değişkenlerine bağlarız.
-           Böylece JS --tx ve --ty'yi değiştirdiğinde kart hareket eder.
-        */
-      .grid-item.visible,
-      .masonry-item.visible {
-        opacity: 1;
-        /* Parallax pozisyonu */
-        transform: translate3d(var(--tx), var(--ty), 0);
+      .card.visible,
+      .bento-item.visible {
+        --reveal-y: 0px;
+        --reveal-opacity: 1;
       }
 
-      /* HOVER EFEKTİ 
-           Hem Parallax pozisyonunu korur hem de -10px yukarı kaldırır.
-           Calc fonksiyonu ile ikisini birleştiriyoruz.
-        */
-      .grid-item:hover,
-      .masonry-item:hover {
+      .card:hover,
+      .bento-item:hover {
         border-color: var(--accent);
-        box-shadow: 0 10px 40px rgba(99, 102, 241, 0.1);
-        /* Parallax + Hover Lift */
-        transform: translate3d(var(--tx), calc(var(--ty) - 10px), 0) !important;
+        transform: translate3d(var(--mx), calc(var(--my) - 10px), 0);
+        z-index: 10;
       }
 
-      .item-description {
-        flex-grow: 1;
+      @media (max-width: 768px) {
+        .card,
+        .bento-item {
+          padding: 30px;
+        }
       }
 
-      .item-label {
+      .card-label {
         font-size: 11px;
+        font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: var(--text-secondary);
-        margin-bottom: 16px;
-        font-weight: 600;
-      }
-
-      .item-title {
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        line-height: 1.3;
-      }
-
-      .item-subtitle {
-        font-size: 16px;
-        color: var(--text-secondary);
+        color: var(--muted);
         margin-bottom: 20px;
       }
 
-      .item-meta {
-        font-size: 13px;
-        color: var(--text-secondary);
-        margin-bottom: 20px;
-        font-style: italic;
-      }
-
-      .item-description {
-        font-size: 15px;
-        line-height: 1.7;
-        color: var(--text-secondary);
-      }
-
-      .item-description ul {
-        margin-top: 16px;
-        padding-left: 20px;
-      }
-
-      .item-description li {
+      .card-title {
+        font-size: 32px;
+        font-weight: 800;
         margin-bottom: 10px;
       }
 
-      /* Tags */
-      .tag-container {
+      .card-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 24px;
+      }
+
+      .status-pulse {
+        width: 8px;
+        height: 8px;
+        background: var(--accent);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+          box-shadow: 0 0 0 0 rgba(45, 49, 250, 0.4);
+        }
+        70% {
+          transform: scale(1.5);
+          opacity: 0;
+          box-shadow: 0 0 0 10px rgba(45, 49, 250, 0);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      .card-description {
+        font-size: 16px;
+        color: var(--muted);
+        margin-bottom: 30px;
+        flex-grow: 1;
+      }
+
+      .card-list {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+
+      .card-list li {
+        font-size: 14px;
+        margin-bottom: 12px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .card-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      /* ARCHITECTURE VISUAL */
+      .arch-visual {
+        height: 150px;
+        border: 1px dashed var(--border);
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: rgba(0, 0, 0, 0.02);
+      }
+
+      .arch-node {
+        width: 40px;
+        height: 40px;
+        border: 2px solid var(--accent);
+        position: absolute;
+      }
+
+      .arch-line {
+        height: 1px;
+        background: var(--accent);
+        position: absolute;
+        opacity: 0.3;
+      }
+
+      /* BENTO GRID (TECH STACK) */
+      .bento-grid {
+        grid-column: 1 / 13;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(200px, auto);
+        gap: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .bento-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .bento-item.large {
+        grid-column: span 2;
+      }
+
+      @media (max-width: 768px) {
+        .bento-item.large {
+          grid-column: span 1;
+        }
+      }
+
+      .tag-cloud {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-top: 24px;
+        margin-top: 20px;
       }
 
       .tag {
-        font-size: 12px;
-        padding: 6px 14px;
-        background: var(--bg-primary);
+        font-size: 11px;
+        padding: 4px 10px;
         border: 1px solid var(--border);
-        border-radius: 20px;
-        color: var(--text-primary);
-        font-weight: 500;
-        transition: all 0.3s ease;
+        border-radius: 2px;
+        font-weight: 600;
+        text-transform: uppercase;
       }
 
-      .tag:hover {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: white;
-      }
-
-      /* Quote Section */
-      .quote-section {
-        padding: 160px 60px;
-        text-align: center;
-        background: radial-gradient(
-          circle at center,
-          rgba(99, 102, 241, 0.05) 0%,
-          transparent 70%
-        );
-      }
-
-      .quote-text {
-        font-size: clamp(24px, 4vw, 40px);
-        font-weight: 300;
-        line-height: 1.4;
-        max-width: 1000px;
-        margin: 0 auto;
-        font-style: italic;
-        color: var(--text-secondary);
-      }
-
-      /* Footer */
+      /* FOOTER */
       .footer {
-        padding: 80px 60px 40px;
+        padding: 100px 0;
         border-top: 1px solid var(--border);
         text-align: center;
       }
 
-      .footer-content {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
       .footer-title {
-        font-size: 32px;
-        font-weight: 600;
-        margin-bottom: 24px;
+        font-size: clamp(32px, 8vw, 120px);
+        font-weight: 900;
+        letter-spacing: -0.05em;
+        margin-bottom: 40px;
       }
 
       .footer-links {
         display: flex;
-        gap: 30px;
-        margin-top: 40px;
         justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
       }
 
       .footer-links a {
-        color: var(--text-secondary);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text);
         text-decoration: none;
-        font-size: 14px;
-        transition: color 0.3s ease;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
       }
 
       .footer-links a:hover {
-        color: var(--accent);
+        border-color: var(--accent);
       }
 
-      @media (max-width: 768px) {
-        .hero-section,
-        .grid-section,
-        .footer {
-          padding: 60px 20px;
-        }
+      /* UTILITIES */
+      .hidden {
+        display: none !important;
+      }
 
-        .floating-grid,
-        .masonry-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .theme-toggle {
-          top: 20px;
-          right: 20px;
-        }
+      [data-en],
+      [data-tr] {
+        transition: opacity 0.3s ease;
       }
     </style>
   </head>
   <body>
-    <div class="theme-toggle" onclick="toggleTheme()">
-      <span id="theme-icon">🌙</span>
-      <span id="theme-text">Dark</span>
+    <div class="controls">
+      <button class="btn-toggle" onclick="toggleLang()" id="lang-btn">
+        TR
+      </button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="theme-btn">
+        ☀️
+      </button>
     </div>
 
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="hero-label">Computer ENGINEERING Student & Developer</div>
-        <h1 class="hero-title">Neşetcan Aydoğan</h1>
-
-        <p class="hero-subtitle">
-          Modern web teknolojileri ile yapay zeka sistemlerini birleştirerek
-          ürünler geliştiren;
-          <br />
-          <span class="highlight-text"
-            >Mühendis Adayı, Yazılım Geliştirici, Girişimci.</span
-          >
+    <main class="container">
+      <!-- HERO -->
+      <section class="hero">
+        <h1 class="hero-title">
+          <span style="display: block; margin-bottom: 0.15em">Neşetcan</span
+          ><span>Aydoğan</span>
+        </h1>
+        <p
+          class="hero-subtitle"
+          data-en="Software & AI Systems Engineer | Tech-Founder"
+          data-tr="Yazılım & YZ Sistemleri Mühendisi | Teknoloji Kurucusu"
+        >
+          Software & AI Systems Engineer | Tech-Founder
         </p>
 
-        <div class="hero-meta">
-          <span>📍 Konya, Türkiye</span>
-          <a href="mailto:canaydogan0568@gmail.com">Email</a>
-          <a href="https://linkedin.com/in/canaydogantabb" target="_blank"
-            >LinkedIn</a
+        <div class="summary-box">
+          <p
+            data-en="Product-driven Software & AI Systems Engineer with a proven track record of end-to-end product delivery. Successfully architected, dockerized, and deployed enterprise-grade systems serving 100+ users. Currently spearheading Decyra, a Cognitive Decision Simulation Engine bridging behavioral science with advanced LLM orchestration."
+            data-tr="Uçtan uca ürün teslimatında kanıtlanmış bir geçmişe sahip, ürün odaklı Yazılım ve YZ Sistemleri Mühendisi. 100'den fazla kullanıcıya hizmet veren kurumsal düzeyde sistemleri başarıyla mimari olarak tasarladı, dockerize etti ve devreye aldı. Şu anda davranış bilimini gelişmiş LLM orkestrasyonuyla birleştiren bir Bilişsel Karar Simülasyon Motoru olan Decyra'ya öncülük ediyor."
           >
-          <a href="https://github.com/nesetcanaydogan" target="_blank"
-            >GitHub</a
-          >
+            Product-driven Software & AI Systems Engineer with a proven track
+            record of end-to-end product delivery. Successfully architected,
+            dockerized, and deployed enterprise-grade systems serving 100+
+            users. Currently spearheading Decyra, a Cognitive Decision
+            Simulation Engine bridging behavioral science with advanced LLM
+            orchestration.
+          </p>
         </div>
-      </div>
-      <div class="scroll-indicator">Scroll to explore</div>
-    </section>
+      </section>
 
-    <section class="grid-section">
-      <h2 class="section-title">Aktif Görevler</h2>
-      <div class="floating-grid">
-        <div class="grid-item">
-          <div class="item-label">Yazılım Geliştirme & Yönetim</div>
-          <h3 class="item-title">KTUN AI Lab</h3>
-          <p class="item-subtitle">Sanayi ve Teknoloji Bakanlığı</p>
-          <p class="item-meta">Ekim 2024 — Günümüz</p>
-          <div class="item-description">
-            <ul>
-              <li>
-                Laboratuvarın dijital dönüşümü için sistem yönetimi ve dashboard
-                uygulaması geliştirme
+      <!-- LIVE PRODUCTS -->
+      <section id="portfolio">
+        <div
+          class="section-label"
+          data-en="Flagship Products"
+          data-tr="Öne Çıkan Ürünler"
+        >
+          Flagship Products
+        </div>
+        <h2 class="section-title" data-en="Portfolio" data-tr="Portfolyo">
+          Portfolio
+        </h2>
+
+        <div class="product-grid">
+          <!-- Ai Lab -->
+          <div class="card">
+            <div class="card-label">Enterprise Solution & Web Design</div>
+            <h3 class="card-title">AI Lab System Panel</h3>
+            <div class="card-status">
+              <div class="status-pulse"></div>
+              <span
+                data-en="LIVE AT AILAB.ORG.TR"
+                data-tr="AILAB.ORG.TR'DE YAYINDA"
+                >LIVE AT AILAB.ORG.TR</span
+              >
+            </div>
+            <p
+              class="card-description"
+              data-en="Comprehensive Laboratory Management System architected for the AI Lab AI & Data Science Laboratory which related to Ministry of Industry and Technology. Handles workflows for 100+ personnel."
+              data-tr="Sanayi ve Teknoloji Bakanlığı'na bağlı AI Lab Yapay Zeka ve Veri Bilimi Laboratuvarı için mimari olarak tasarlanmış kapsamlı Laboratuvar Yönetim Sistemi. 100'den fazla personelin iş akışlarını yönetir."
+            >
+              Comprehensive Laboratory Management System architected for the AI
+              Lab AI & Data Science Laboratory which related to Ministry of
+              Industry and Technology. Handles workflows for 100+ personnel.
+            </p>
+            <div class="arch-visual" style="margin-bottom: 24px">
+              <!-- Cloud/System Arch Placeholder -->
+              <div
+                style="
+                  width: 60%;
+                  height: 2px;
+                  background: var(--accent);
+                  opacity: 0.2;
+                  position: absolute;
+                "
+              ></div>
+              <div
+                style="
+                  width: 2px;
+                  height: 60%;
+                  background: var(--accent);
+                  opacity: 0.2;
+                  position: absolute;
+                "
+              ></div>
+              <div
+                class="arch-node"
+                style="
+                  top: 20%;
+                  left: 30%;
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 2px;
+                "
+              ></div>
+              <div
+                class="arch-node"
+                style="
+                  bottom: 30%;
+                  right: 20%;
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 2px;
+                "
+              ></div>
+              <div
+                class="arch-node"
+                style="
+                  top: 50%;
+                  left: 60%;
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 2px;
+                  background: var(--accent);
+                "
+              ></div>
+              <span
+                style="
+                  font-size: 8px;
+                  font-weight: 900;
+                  opacity: 0.4;
+                  position: absolute;
+                  bottom: 10px;
+                  right: 10px;
+                "
+                >SYS_ACTIVE_1.0</span
+              >
+            </div>
+            <ul class="card-list">
+              <li
+                data-en="Tech: React 19, Vite, TailwindCSS, React Router v7"
+                data-tr="Teknoloji: React 19, Vite, TailwindCSS, React Router v7"
+              >
+                Tech: React 19, Vite, TailwindCSS, React Router v7
               </li>
-              <li>
-                React, TailwindCSS ve JavaScript ile modern, responsive
-                arayüzler tasarlama
+              <li
+                data-en="Infrastructure: Docker, Nginx, CloudPanel, SSH"
+                data-tr="Altyapı: Docker, Nginx, CloudPanel, SSH"
+              >
+                Infrastructure: Docker, Nginx, CloudPanel, SSH
               </li>
-              <li>Proje süreçlerinin takibi ve ekip koordinasyonu</li>
+              <li
+                data-en="Role-Based Access Control (RBAC) implementation"
+                data-tr="Rol Tabanlı Erişim Kontrolü (RBAC) uygulaması"
+              >
+                Role-Based Access Control (RBAC) implementation
+              </li>
+            </ul>
+            <a
+              href="https://ailab.org.tr"
+              target="_blank"
+              class="btn-toggle"
+              style="align-self: flex-start"
+              >VISIT SITE</a
+            >
+          </div>
+
+          <!-- Decyra -->
+          <div class="card">
+            <div class="card-label">AI & Simulation</div>
+            <h3 class="card-title">Decyra</h3>
+            <div
+              class="card-status"
+              data-en="TÜBİTAK 1812 BİGG CANDIDATE"
+              data-tr="TÜBİTAK 1812 BİGG ADAYI"
+            >
+              TÜBİTAK 1812 BİGG CANDIDATE
+            </div>
+            <p
+              class="card-description"
+              data-en="Highly scalable Cognitive Decision Simulation Engine grounded in Behavioral Science and advanced LLM orchestration."
+              data-tr="Davranış Bilimi ve gelişmiş LLM orkestrasyonuna dayanan, yüksek düzeyde ölçeklenebilir Bilişsel Karar Simülasyon Motoru."
+            >
+              Highly scalable Cognitive Decision Simulation Engine grounded in
+              Behavioral Science and advanced LLM orchestration.
+            </p>
+            <div class="arch-visual">
+              <!-- Neural/Cognitive Arch Placeholder -->
+              <div
+                class="arch-node"
+                style="top: 15%; left: 15%; border-radius: 50%"
+              ></div>
+              <div
+                class="arch-node"
+                style="bottom: 15%; right: 15%; border-radius: 50%"
+              ></div>
+              <div
+                class="arch-node"
+                style="
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  border-radius: 50%;
+                  border-style: dashed;
+                "
+              ></div>
+              <div
+                class="arch-line"
+                style="
+                  width: 120px;
+                  transform: rotate(45deg);
+                  top: 50%;
+                  left: 20%;
+                "
+              ></div>
+              <div
+                class="arch-line"
+                style="
+                  width: 120px;
+                  transform: rotate(-45deg);
+                  top: 50%;
+                  right: 20%;
+                "
+              ></div>
+              <span
+                style="
+                  font-size: 8px;
+                  font-weight: 900;
+                  opacity: 0.4;
+                  position: absolute;
+                  bottom: 10px;
+                  left: 10px;
+                "
+                >COGNITIVE_CORE_IN-DEV</span
+              >
+            </div>
+            <ul class="card-list" style="margin-top: 20px">
+              <li
+                data-en="Stack: Next.js 14, FastAPI, LangChain, DSPy"
+                data-tr="Stack: Next.js 14, FastAPI, LangChain, DSPy"
+              >
+                Stack: Next.js 14, FastAPI, LangChain, DSPy
+              </li>
+              <li
+                data-en="Agent-based modeling using Mesa & SimPy"
+                data-tr="Mesa ve SimPy kullanarak ajan tabanlı modelleme"
+              >
+                Agent-based modeling using Mesa & SimPy
+              </li>
             </ul>
           </div>
         </div>
 
-        <div class="grid-item">
-          <div class="item-label">Araştırma</div>
-          <h3 class="item-title">TÜBİTAK 2209-A</h3>
-          <p class="item-subtitle">Hidrotermal Karbonizasyon Optimizasyonu</p>
-          <p class="item-meta">Eylül 2024 — Günümüz</p>
-          <div class="item-description">
-            <ul>
-              <li>
-                Veri toplama, literatür tarama ve analiz süreçlerini yönetme
-              </li>
-              <li>Araştırma çıktılarının sunumu için teknik altyapı desteği</li>
-            </ul>
-          </div>
+        <div
+          style="
+            grid-column: 1 / 13;
+            margin-top: 40px;
+            font-size: 13px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+          "
+          data-en="Portfolio Notice: Due to commercialization protocols (TÜBİTAK BİGG) and NDAs, project source codes are maintained in Private GitHub Repositories. Contact for technical details."
+          data-tr="Portfolyo Notu: Ticarileştirme protokolleri (TÜBİTAK BİGG) ve NDA'lar nedeniyle, proje kaynak kodları Özel GitHub Depolarında tutulmaktadır. Teknik detaylar için iletişime geçin."
+        >
+          Portfolio Notice: Due to commercialization protocols (TÜBİTAK BİGG)
+          and NDAs, project source codes are maintained in Private GitHub
+          Repositories. Contact for technical details.
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="quote-section">
-      <p class="quote-text">
-        "Impedimentum actionis actionem promovet. Quod in via obstat, via fit."
-      </p>
-      <div
-        style="
-          margin-top: 24px;
-          font-size: 14px;
-          color: var(--accent);
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          font-weight: 600;
-        "
-      >
-        — Marcus Aurelius
-      </div>
-      <div
-        style="
-          margin-top: 8px;
-          font-size: 13px;
-          color: var(--text-secondary);
-          opacity: 0.7;
-        "
-      >
-        (Eyleme engel olan şey, eylemi geliştirir. Yola engel olan, yolun
-        kendisi olur.)
-      </div>
-    </section>
-
-    <section class="grid-section">
-      <h2 class="section-title">Odak Alanları</h2>
-      <div class="floating-grid">
-        <div class="grid-item">
-          <div class="item-label">Yapay Zeka</div>
-          <h3 class="item-title">LLM & AI Sistemleri</h3>
-          <div class="item-description">
-            Büyük Dil Modelleri, RAG mimarileri ve AI ajanları üzerine
-            çalışmalar. NLP tabanlı akıllı sistemler tasarlama ve entegrasyonu.
-          </div>
-          <div class="tag-container">
-            <span class="tag">LLM</span>
-            <span class="tag">RAG</span>
-            <span class="tag">AI Agents</span>
-            <span class="tag">NLP</span>
-            <span class="tag">Veri Analizi</span>
-          </div>
+      <!-- EXPERIENCE -->
+      <section>
+        <div
+          class="section-label"
+          data-en="Research & Experience"
+          data-tr="Araştırma ve Deneyim"
+        >
+          Research & Experience
         </div>
+        <h2 class="section-title" data-en="The Journey" data-tr="Yolculuk">
+          The Journey
+        </h2>
 
-        <div class="grid-item">
-          <div class="item-label">Web Geliştirme</div>
-          <h3 class="item-title">Fullstack Mimari</h3>
-          <div class="item-description">
-            Node.js ve SQL ile ölçeklenebilir backend mimarileri. React.js ile
-            modern frontend uygulamaları. SaaS tabanlı ürün prototipleri.
+        <div class="bento-grid">
+          <div class="bento-item large">
+            <div class="card-label">
+              AI Lab - Ministry of Industry and Technology
+            </div>
+            <h3 class="card-title">Developer & VP</h3>
+            <p
+              data-en="Serving as Vice President and Member of Digital Design in the laboratory management team. Created a modern, responsive, and robust Laboratory Management System designed for the Artificial Intelligence & Data Science Laboratory. This client-side application serves as the central hub for lab members, captains, and administrators to manage projects, tasks, room occupancy and team communications efficiently."
+              data-tr="Laboratuvar yönetim ekibinde Başkan Yardımcısı ve Dijital Tasarım Sorumlusu olarak görev yapmaktadır. Yapay Zeka ve Veri Bilimi Laboratuvarı için tasarlanmış modern, duyarlı ve sağlam bir Laboratuvar Yönetim Sistemi geliştirmiştir. Bu istemci tarafı uygulama, laboratuvar üyeleri, ekip liderleri ve yöneticilerin projeleri, görevleri, oda kullanım durumlarını ve ekip iletişimini verimli bir şekilde yönetebilmeleri için merkezi bir platform işlevi görmektedir."
+            >
+              Serving as Vice President and Member of Digital Design in the
+              laboratory management team. Created a modern, responsive, and
+              robust Laboratory Management System designed for the Artificial
+              Intelligence & Data Science Laboratory. This client-side
+              application serves as the central hub for lab members, captains,
+              and administrators to manage projects, tasks, room occupancy and
+              team communications efficiently.
+            </p>
           </div>
-          <div class="tag-container">
-            <span class="tag">React.js</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express.js</span>
-            <span class="tag">SQL</span>
-            <span class="tag">RESTful APIs</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="grid-section">
-      <h2 class="section-title">Teknik Yetkinlikler</h2>
-      <div class="masonry-grid">
-        <div class="masonry-item">
-          <div class="item-label">Programlama Dilleri</div>
-          <div class="tag-container">
-            <span class="tag">Python</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Java</span>
-            <span class="tag">C</span>
-            <span class="tag">SQL</span>
-            <span class="tag">C#</span>
-          </div>
-        </div>
-
-        <div class="masonry-item">
-          <div class="item-label">Web Teknolojileri</div>
-          <div class="tag-container">
-            <span class="tag">React.js</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express.js</span>
-            <span class="tag">TailwindCSS</span>
-            <span class="tag">HTML5/CSS3</span>
-          </div>
-        </div>
-
-        <div class="masonry-item">
-          <div class="item-label">Yapay Zeka</div>
-          <div class="tag-container">
-            <span class="tag">Large Language Models</span>
-            <span class="tag">RAG Architecture</span>
-            <span class="tag">AI Agents</span>
-            <span class="tag">NLP</span>
-          </div>
-        </div>
-
-        <div class="masonry-item">
-          <div class="item-label">Araçlar</div>
-          <div class="tag-container">
-            <span class="tag">Git/GitHub</span>
-            <span class="tag">VS Code</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Agile/Scrum</span>
-          </div>
-        </div>
-
-        <div class="masonry-item">
-          <div class="item-label">Eğitim</div>
-          <h3 class="item-title">Konya Teknik Üniversitesi</h3>
-          <p class="item-subtitle">Bilgisayar Mühendisliği</p>
-          <p class="item-meta">2024 — 2028</p>
-          <div class="item-description">GANO: 3.03 / 4.00</div>
-        </div>
-
-        <div class="masonry-item">
-          <div class="item-label">Dil Yetkinliği</div>
-          <div class="item-description">
-            <p><strong>İngilizce:</strong> B2 Upper Intermediate (EF SET)</p>
-            <p style="margin-top: 10px">
-              <strong>Almanca:</strong> A1-A2 Temel Seviye
+          <div class="bento-item">
+            <div class="card-label">TÜBİTAK 2209-A</div>
+            <h3 class="card-title">Researcher & Web Developer</h3>
+            <p
+              data-en="Conducted a literature review to collect data for use in machine learning and optimization algorithms and played a role in developing the project’s promotional website."
+              data-tr="Makine öğrenimi ve optimizasyon algoritmalarında kullanmak için literatür taraması yaparak veri toplamış ve projenin tanıtım sitesinin geliştirilmesi noktasında görev almıştır."
+            >
+              Conducted a literature review to collect data for use in machine
+              learning and optimization algorithms and played a role in
+              developing the project’s promotional website.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- TECH STACK -->
+      <section id="tech">
+        <div
+          class="section-label"
+          data-en="Core Competencies"
+          data-tr="Temel Yetkinlikler"
+        >
+          Core Competencies
+        </div>
+        <h2
+          class="section-title"
+          data-en="Tech Stack"
+          data-tr="Teknoloji Yığını"
+        >
+          Tech Stack
+        </h2>
+
+        <div class="bento-grid">
+          <div class="bento-item">
+            <h4 class="card-label">Backend</h4>
+            <div class="tag-cloud">
+              <span class="tag">FastAPI</span><span class="tag">Node.js</span
+              ><span class="tag">Python 3.11+</span>
+              <span class="tag">PostgreSQL</span><span class="tag">Redis</span
+              ><span class="tag">Celery</span>
+            </div>
+          </div>
+          <div class="bento-item">
+            <h4 class="card-label">Infrastructure</h4>
+            <div class="tag-cloud">
+              <span class="tag">Docker</span><span class="tag">Nginx</span
+              ><span class="tag">CloudPanel</span> <span class="tag">SSH</span
+              ><span class="tag">Linux Admin</span>
+            </div>
+          </div>
+          <div class="bento-item">
+            <h4 class="card-label">Frontend</h4>
+            <div class="tag-cloud">
+              <span class="tag">React 19</span
+              ><span class="tag">Next.js 14</span
+              ><span class="tag">TypeScript</span>
+              <span class="tag">TailwindCSS</span
+              ><span class="tag">Zustand</span>
+            </div>
+          </div>
+          <div class="bento-item large">
+            <h4 class="card-label">AI & Modeling</h4>
+            <div class="tag-cloud">
+              <span class="tag">LangChain</span
+              ><span class="tag">LlamaIndex</span><span class="tag">DSPy</span>
+              <span class="tag">Ollama</span
+              ><span class="tag">RAG Pipelines</span
+              ><span class="tag">Agentic AI</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section>
+        <div
+          class="section-label"
+          data-en="Academic Background"
+          data-tr="Akademik Geçmiş"
+        >
+          Academic Background
+        </div>
+        <div class="product-grid">
+          <div>
+            <h3 class="card-title">Konya Technical University</h3>
+            <p
+              data-en="B.S. in Computer Engineering"
+              data-tr="Bilgisayar Mühendisliği Lisans"
+            >
+              B.S. in Computer Engineering
+            </p>
+            <p class="muted" style="font-size: 14px; margin-top: 10px">
+              2024 — 2028 | GPA: 2.94 / 4.00
+            </p>
+          </div>
+          <div>
+            <h4 class="card-label" data-en="Languages" data-tr="Diller">
+              Languages
+            </h4>
+            <p>English (C1), German (A2), French (A1)</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer">
-      <div class="footer-content">
-        <h3 class="footer-title">İletişim</h3>
-        <p style="color: var(--text-secondary)">
-          <strong>Email:</strong> canaydogan0568@gmail.com<br />
-          <strong>Konum:</strong> Konya, Türkiye
-        </p>
-        <div class="footer-links">
-          <a href="mailto:canaydogan0568@gmail.com">Email</a>
-          <a href="https://linkedin.com/in/canaydogantabb" target="_blank"
-            >LinkedIn</a
-          >
-          <a href="https://github.com/nesetcanaydogan" target="_blank"
-            >GitHub</a
-          >
-        </div>
+      <h2
+        class="footer-title"
+        data-en="Let's build the future."
+        data-tr="Geleceği birlikte inşa edelim."
+      >
+        Let's build the future.
+      </h2>
+      <div class="footer-links">
+        <a href="mailto:canaydogan0568@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/canaydogantabb" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/nesetcanaydogan" target="_blank">GitHub</a>
       </div>
+      <p style="margin-top: 60px; font-size: 12px; color: var(--muted)">
+        © 2026 Neşetcan Aydoğan.
+      </p>
     </footer>
 
     <script>
-      // Theme Toggle
-      function toggleTheme() {
-        document.body.classList.toggle("light-mode");
-        const isDark = !document.body.classList.contains("light-mode");
-        document.getElementById("theme-icon").textContent = isDark
-          ? "🌙"
-          : "☀️";
-        document.getElementById("theme-text").textContent = isDark
-          ? "Dark"
-          : "Light";
+      // LANGUAGE TOGGLE
+      let currentLang = "en";
+      function toggleLang() {
+        currentLang = currentLang === "en" ? "tr" : "en";
+        document.getElementById("lang-btn").innerText =
+          currentLang === "en" ? "TR" : "EN";
+        document.documentElement.lang = currentLang;
+
+        const titles = {
+          en: "Neşetcan Aydoğan — Software & AI Systems Engineer",
+          tr: "Neşetcan Aydoğan — Yazılım & YZ Sistemleri Mühendisi",
+        };
+        document.title = titles[currentLang];
+
+        document.querySelectorAll("[data-en]").forEach((el) => {
+          el.innerText = el.getAttribute(`data-${currentLang}`);
+        });
       }
 
-      // Scroll Animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
+      // THEME TOGGLE
+      function toggleTheme() {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+        document.getElementById("theme-btn").innerText = isDark ? "🌙" : "☀️";
+      }
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("visible");
-            }, 100);
-          }
-        });
-      }, observerOptions);
+      // Set default dark mode based on time or preference?
+      // Let's stick to explicit toggle but maybe default to system?
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        toggleTheme();
+      }
 
-      document.querySelectorAll(".grid-item, .masonry-item").forEach((el) => {
-        observer.observe(el);
-      });
-
-      // Smooth Scroll
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        });
-      });
-
-      // PARALLAX EFFECT GERİ EKLENDİ
-      // CSS Variable kullanarak performanslı ve hatasız hale getirildi.
+      // PARALLAX FOR SWISS FEEL
       document.addEventListener("mousemove", (e) => {
-        // Ekranın ortasını referans al
-        const mouseX = e.clientX - window.innerWidth / 2;
-        const mouseY = e.clientY - window.innerHeight / 2;
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
 
-        document
-          .querySelectorAll(".grid-item, .masonry-item")
-          .forEach((item, index) => {
-            // Her karta farklı bir hız faktörü ver (0.01 - 0.03 arası)
-            // Modüler aritmetik ile çeşitlilik sağlar
-            const speed = ((index % 4) + 1) * 0.008;
+        document.querySelectorAll(".card, .bento-item").forEach((item) => {
+          item.style.setProperty("--mx", `${moveX}px`);
+          item.style.setProperty("--my", `${moveY}px`);
+        });
+      });
 
-            const x = mouseX * speed;
-            const y = mouseY * speed;
-
-            // CSS değişkenlerini güncelle (Bu, layout'u bozmaz)
-            item.style.setProperty("--tx", `${x}px`);
-            item.style.setProperty("--ty", `${y}px`);
+      // Reveal on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
           });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".card, .bento-item, section").forEach((el) => {
+        observer.observe(el);
       });
     </script>
   </body>
