@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr" class="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apolitig Dükkan | Özel Koleksiyonlar</title>
+
+  <!-- Tailwind CSS & Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "canvas-mist": "#f2f4f5",
+            "pure-white": "#ffffff",
+            "ink-black": "#000000",
+            "shop-violet": "#5433eb",
+            "primary-dark": "#3b00d1",
+            "independence-red": "#a30b18",
+            "muted-gray": "#787574",
+            "faint-border": "#ebebeb",
+            "surface-variant": "#e1e3e4",
+            "surface-container-low": "#f2f4f5"
+          },
+          borderRadius: {
+            "pill-card": "28px",
+            "inner-img": "20px",
+            "full": "9999px"
+          },
+          spacing: {
+            "section-gap": "5rem",
+            "margin-page": "1.5rem",
+            "sidebar-width": "64px"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- External Styles -->
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body class="bg-canvas-mist text-ink-black overflow-x-hidden min-h-screen">
+
+  <!-- SIDE NAVIGATION RAIL -->
+  <aside class="fixed left-0 top-0 h-full w-[64px] z-50 bg-pure-white border-r border-faint-border shadow-sm hidden md:flex flex-col items-center py-6 justify-between">
+    <div class="flex flex-col items-center space-y-6">
+      <a href="../master.html" class="w-10 h-10 bg-shop-violet rounded-xl flex items-center justify-center text-pure-white font-black text-xl shadow-violet-glow hover:scale-105 transition-transform">A</a>
+      
+      <nav class="flex flex-col items-center space-y-4">
+        <a href="../master.html" class="w-11 h-11 text-muted-gray hover:text-shop-violet hover:bg-canvas-mist rounded-xl flex flex-col items-center justify-center transition-colors" title="Anasayfa">
+          <span class="material-symbols-outlined text-[22px]">home</span>
+        </a>
+        <a href="products.html" class="w-11 h-11 text-muted-gray hover:text-shop-violet hover:bg-canvas-mist rounded-xl flex flex-col items-center justify-center transition-colors" title="Mağaza">
+          <span class="material-symbols-outlined text-[22px]">storefront</span>
+        </a>
+        <a href="categories.html" class="w-11 h-11 text-muted-gray hover:text-shop-violet hover:bg-canvas-mist rounded-xl flex flex-col items-center justify-center transition-colors" title="Kategoriler">
+          <span class="material-symbols-outlined text-[22px]">grid_view</span>
+        </a>
+        <a href="collections.html" class="w-11 h-11 bg-shop-violet text-pure-white rounded-xl flex flex-col items-center justify-center transition-all scale-105 shadow-sm" title="Koleksiyonlar">
+          <span class="material-symbols-outlined filled text-[22px]">auto_awesome</span>
+        </a>
+        <a href="cart.html" class="w-11 h-11 text-muted-gray hover:text-shop-violet hover:bg-canvas-mist rounded-xl flex flex-col items-center justify-center transition-colors relative" title="Sepetim">
+          <span class="material-symbols-outlined text-[22px]">shopping_cart</span>
+          <span class="cart-badge-count absolute -top-1 -right-1 bg-independence-red text-pure-white text-[10px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="flex flex-col items-center space-y-4">
+      <a href="about.html" class="text-muted-gray hover:text-shop-violet transition-colors" title="Hakkımızda">
+        <span class="material-symbols-outlined text-[22px]">info</span>
+      </a>
+      <a href="contact.html" class="text-muted-gray hover:text-shop-violet transition-colors" title="İletişim">
+        <span class="material-symbols-outlined text-[22px]">call</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- TOP APP BAR -->
+  <header class="fixed top-0 left-0 md:left-[64px] right-0 z-40 bg-canvas-mist/85 backdrop-blur-md border-b border-faint-border/50">
+    <div class="max-w-[1800px] mx-auto w-full px-4 md:px-8 py-3.5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <a href="../master.html" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 bg-shop-violet rounded-xl flex md:hidden items-center justify-center text-pure-white font-black text-lg">A</div>
+          <h1 class="font-headline-lg text-headline-lg font-black tracking-tight text-ink-black text-xl">Apolitig Dükkan</h1>
+        </a>
+        <span class="text-xs text-muted-gray font-semibold">/ Özel Koleksiyonlar</span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="cart.html" class="p-2 text-muted-gray hover:text-shop-violet transition-colors relative" title="Sepetim">
+          <span class="material-symbols-outlined text-[22px]">shopping_cart</span>
+          <span class="cart-badge-count absolute top-0 right-0 bg-independence-red text-pure-white text-[10px] font-bold px-1.5 py-0.5 rounded-full hidden">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="md:ml-[64px] pt-24 pb-20 w-full min-h-screen">
+    
+    <div class="max-w-[1800px] mx-auto w-full px-4 md:px-8">
+
+      <!-- PAGE HEADER -->
+      <div class="mb-12 text-center max-w-3xl mx-auto">
+        <span class="bg-pure-white border border-faint-border text-shop-violet font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest inline-block mb-3">Kürasyon Seçkisi</span>
+        <h2 class="font-headline-lg text-3xl md:text-4xl font-black text-ink-black">Özel Tematik Koleksiyonlar</h2>
+        <p class="font-body-md text-body-md text-muted-gray mt-2">Cumhuriyet devrimlerinin, kurucu kadronun ve estetik dönüşümün tematik kürasyonları.</p>
+      </div>
+
+      <!-- COLLECTION SPOTLIGHTS -->
+      <div class="space-y-12 mb-16 w-full">
+        
+        <!-- Collection 1: Kurucular Serisi -->
+        <div class="bg-pure-white p-8 md:p-12 rounded-pill-card border border-faint-border shadow-soft-card grid grid-cols-1 lg:grid-cols-2 gap-10 items-center w-full">
+          <div class="aspect-4/3 rounded-[24px] overflow-hidden bg-surface-container-low border border-faint-border">
+            <img src="../public/image_360.webp" alt="Kurucular Serisi" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span class="bg-shop-violet text-pure-white px-3 py-1 rounded-full font-label-sm text-label-sm font-bold inline-block mb-3">Koleksiyon 01</span>
+            <h3 class="font-headline-lg text-3xl font-black text-ink-black mb-3">Kurucular Serisi</h3>
+            <p class="font-body-md text-body-md text-muted-gray leading-relaxed mb-6">
+              Milli Mücadele'nin önder kadrosunun, paşaların ve ilk meclis mebuslarının en değerli fotoğrafları, portreleri ve büstlerinden oluşan koleksiyon. Müze kalitesinde tuval ve bronz malzeme kullanılmıştır.
+            </p>
+            <a href="products.html?cat=Kurtulu%C5%9F%20Sava%C5%9F%C4%B1" class="inline-flex items-center gap-2 bg-shop-violet text-pure-white px-6 py-3 rounded-full font-bold font-label-md text-label-md shadow-violet-glow hover:scale-105 transition-all">
+              <span>Koleksiyon Eserlerini Göster</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Collection 2: Devrim Estetiği -->
+        <div class="bg-pure-white p-8 md:p-12 rounded-pill-card border border-faint-border shadow-soft-card grid grid-cols-1 lg:grid-cols-2 gap-10 items-center w-full">
+          <div class="order-2 lg:order-1">
+            <span class="bg-independence-red text-pure-white px-3 py-1 rounded-full font-label-sm text-label-sm font-bold inline-block mb-3">Koleksiyon 02</span>
+            <h3 class="font-headline-lg text-3xl font-black text-ink-black mb-3">Devrim Estetiği</h3>
+            <p class="font-body-md text-body-md text-muted-gray leading-relaxed mb-6">
+              Harf devrimi, kılık kıyafet kanunu ve çağdaşlaşma hareketlerinin minimalist tasarımlara dönüştüğü aksesuar ve kırtasiye ürünleri. Altıok sembolü ve modernist typografi öne çıkar.
+            </p>
+            <a href="products.html?cat=Kemalizm" class="inline-flex items-center gap-2 bg-ink-black text-pure-white px-6 py-3 rounded-full font-bold font-label-md text-label-md hover:bg-shop-violet transition-all">
+              <span>Koleksiyon Eserlerini Göster</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+          <div class="order-1 lg:order-2 aspect-4/3 rounded-[24px] overflow-hidden bg-surface-container-low border border-faint-border">
+            <img src="../public/altiok-a5-mockup.webp" alt="Devrim Estetiği" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <!-- Collection 3: Arşiv & Prestij Nüshalar -->
+        <div class="bg-pure-white p-8 md:p-12 rounded-pill-card border border-faint-border shadow-soft-card grid grid-cols-1 lg:grid-cols-2 gap-10 items-center w-full">
+          <div class="aspect-4/3 rounded-[24px] overflow-hidden bg-surface-container-low border border-faint-border">
+            <img src="../public/img-0539.webp" alt="Prestij Nüshalar" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <span class="bg-shop-violet text-pure-white px-3 py-1 rounded-full font-label-sm text-label-sm font-bold inline-block mb-3">Koleksiyon 03</span>
+            <h3 class="font-headline-lg text-3xl font-black text-ink-black mb-3">Prestij Arşiv Nüshaları</h3>
+            <p class="font-body-md text-body-md text-muted-gray leading-relaxed mb-6">
+              Tarihi belgeler, orijinal Nutuk metninin haritalı baskısı ve el yapımı deri ciltli günlükler. Gelecek kuşaklara bırakılacak en kıymetli kütüphane mirası.
+            </p>
+            <a href="products.html?cat=Koleksiyon" class="inline-flex items-center gap-2 bg-shop-violet text-pure-white px-6 py-3 rounded-full font-bold font-label-md text-label-md shadow-violet-glow hover:scale-105 transition-all">
+              <span>Koleksiyon Eserlerini Göster</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- MOBILE BOTTOM NAVIGATION BAR -->
+  <nav class="fixed bottom-3 left-4 right-4 z-50 bg-pure-white/90 backdrop-blur-md border border-faint-border shadow-xl rounded-full md:hidden flex justify-around items-center py-2 px-3">
+    <a href="../master.html" class="flex flex-col items-center text-muted-gray">
+      <span class="material-symbols-outlined text-[20px]">home</span>
+      <span class="text-[10px] font-bold">Anasayfa</span>
+    </a>
+    <a href="products.html" class="flex flex-col items-center text-muted-gray">
+      <span class="material-symbols-outlined text-[20px]">storefront</span>
+      <span class="text-[10px] font-bold">Mağaza</span>
+    </a>
+    <a href="categories.html" class="flex flex-col items-center text-muted-gray">
+      <span class="material-symbols-outlined text-[20px]">grid_view</span>
+      <span class="text-[10px] font-bold">Kategori</span>
+    </a>
+    <a href="cart.html" class="flex flex-col items-center text-muted-gray relative">
+      <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+      <span class="text-[10px] font-bold">Sepet</span>
+      <span class="cart-badge-count absolute -top-1 -right-1 bg-independence-red text-pure-white text-[9px] font-bold px-1 rounded-full hidden">0</span>
+    </a>
+  </nav>
+
+  <!-- JavaScript Dependencies -->
+  <script src="../js/products-data.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+</html>
