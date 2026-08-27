@@ -1,2190 +1,472 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Primary SEO Meta Tags -->
-    <title>Neşetcan Aydoğan — Software & AI Systems Engineer</title>
-    <meta
-      name="title"
-      content="Neşetcan Aydoğan — Software & AI Systems Engineer"
-    />
-    <meta
-      name="description"
-      content="Personal portfolio of Neşetcan Aydoğan. Specializing in high-performance computing, agentic AI architectures, and end-to-end system delivery."
-    />
-    <meta
-      name="keywords"
-      content="Neşetcan Aydoğan, Software Engineer, AI Systems Engineer, Decyra, Ai Lab, Computer Vision, Deep Learning, Portfolio, Resume"
-    />
-    <meta name="author" content="Neşetcan Aydoğan" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nesetcanaydogan.github.io/" />
-    <meta
-      property="og:title"
-      content="Neşetcan Aydoğan — Software & AI Systems Engineer"
-    />
-    <meta
-      property="og:description"
-      content="Personal portfolio and resume of Neşetcan Aydoğan. Specializing in high-performance computing, agentic AI architectures, and end-to-end product delivery."
-    />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://nesetcanaydogan.github.io/" />
-    <meta
-      property="twitter:title"
-      content="Neşetcan Aydoğan — Software & AI Systems Engineer"
-    />
-    <meta
-      property="twitter:description"
-      content="Personal portfolio and resume of Neşetcan Aydoğan. Specializing in high-performance computing, agentic AI architectures, and end-to-end product delivery."
-    />
-
-    <!-- Typography Load (Space Grotesk, IBM Plex Sans, JetBrains Mono) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <title>Neşetcan Aydoğan | Portfolio</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap");
+
       :root {
-        /* Palette Tokens from DESIGN.md */
-        --bg-void: #001011;
-        --bg-panel: #093a3e;
-        --signal: #3aafb9;
-        --signal-dim: rgba(58, 175, 185, 0.35);
-        --ink: #eaf3f3;
-        --ink-muted: #8fa8aa;
+        --bg-color: #fafafa;
+        --text-main: #111111;
+        --text-muted: #555555;
+        --border-color: #eaeaea;
+        --accent: #021024;
+        --font-heading:
+          "Stack Sans Notch", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Helvetica, Arial, sans-serif;
+        --font-body: "Plus Jakarta Sans", sans-serif;
       }
 
-      /* Core Reset */
       * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        background-color: var(--bg-void);
-        color: var(--ink);
-        font-family: "IBM Plex Sans", sans-serif;
-        scroll-behavior: smooth;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
       }
 
       body {
-        background-image:
-          linear-gradient(rgba(58, 175, 185, 0.02) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(58, 175, 185, 0.02) 1px, transparent 1px);
-        background-size: 40px 40px;
-        background-position: center top;
-        min-height: 100vh;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: var(--font-body);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
       }
 
-      /* Custom Selection and Scrollbar */
-      ::selection {
-        background-color: var(--signal-dim);
-        color: var(--ink);
-      }
-
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: var(--bg-void);
-      }
-      ::-webkit-scrollbar-thumb {
-        background: var(--bg-panel);
-        border: 1px solid var(--signal-dim);
-        border-radius: 2px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--signal-dim);
-      }
-
-      /* Accessibility Skip Link */
-      .skip-link {
-        position: absolute;
-        top: -100px;
-        left: 0;
-        background: var(--signal);
-        color: var(--bg-void);
-        padding: 8px 16px;
-        z-index: 9999;
-        transition: top 0.2s;
-        font-family: "JetBrains Mono", monospace;
-        font-weight: 700;
-        font-size: 12px;
-        text-decoration: none;
-      }
-      .skip-link:focus {
-        top: 0;
-      }
-
-      /* Main Container Layout */
-      .app-container {
-        max-width: 1060px;
+      .container {
+        max-width: 760px;
         margin: 0 auto;
-        padding: 48px 24px;
-        display: grid;
-        grid-template-columns: 200px 1fr;
-        gap: 64px;
-        position: relative;
+        padding: 5rem 2rem;
       }
 
-      /* Sidebar Navigation */
-      aside {
-        position: sticky;
-        top: 48px;
-        height: calc(100vh - 96px);
+      header {
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        border-right: 1px solid var(--signal-dim);
-        padding-right: 32px;
+        align-items: flex-start;
+        margin-bottom: 4rem;
       }
 
-      .sidebar-top {
-        display: flex;
-        flex-direction: column;
-        gap: 48px;
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-heading);
+        color: var(--accent);
+        font-weight: 600;
       }
 
-      .nav-brand {
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
+      h1 {
+        font-size: 2.4rem;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.5rem;
       }
 
-      .brand-name {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        color: var(--ink);
-      }
-
-      .brand-status {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        color: var(--signal);
-        display: flex;
-        align-items: center;
-        letter-spacing: 0.05em;
-        margin-top: 4px;
-      }
-
-      .pulse-dot {
-        width: 6px;
-        height: 6px;
-        background-color: var(--signal);
-        border-radius: 50%;
-        display: inline-block;
-        margin-right: 6px;
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(0.9);
-          opacity: 0.6;
-        }
-        50% {
-          transform: scale(1.2);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(0.9);
-          opacity: 0.6;
-        }
-      }
-
-      .sidebar-nav ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .nav-link {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 12px;
+      .subtitle {
+        font-size: 1.1rem;
+        color: var(--text-muted);
         font-weight: 500;
-        color: var(--ink-muted);
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        margin-top: 4rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+        letter-spacing: -0.01em;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      p {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+
+      .section-item {
+        margin-bottom: 2.5rem;
+      }
+
+      .meta {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      ul {
+        padding-left: 1.2rem;
+        color: var(--text-muted);
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      a {
+        color: var(--text-main);
         text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: color 0.2s ease;
-        position: relative;
-        letter-spacing: 0.05em;
+        border-bottom: 1px solid #ccc;
+        transition: border-color 0.2s ease;
       }
 
-      .nav-link .nav-num {
-        color: var(--signal-dim);
-        transition: color 0.2s ease;
+      a:hover {
+        border-color: var(--text-main);
       }
 
-      .nav-link:hover {
-        color: var(--ink);
-      }
-      .nav-link:hover .nav-num {
-        color: var(--signal);
-      }
-
-      .nav-link.active {
-        color: var(--signal);
-      }
-      .nav-link.active .nav-num {
-        color: var(--signal);
-        font-weight: 700;
-      }
-      .nav-link.active::before {
-        content: "▶";
-        position: absolute;
-        left: -16px;
-        color: var(--signal);
-        font-size: 8px;
-      }
-
-      .sidebar-bottom {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      .lang-selector button {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        font-weight: 700;
-        background-color: transparent;
-        color: var(--signal);
-        border: 1px solid var(--signal-dim);
-        padding: 6px 12px;
+      .lang-switch {
         cursor: pointer;
-        border-radius: 2px;
-        transition: all 0.2s ease;
-        letter-spacing: 0.05em;
+        font-size: 0.9rem;
+        font-weight: 600;
+        background: none;
+        border: 1px solid var(--border-color);
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        color: var(--text-main);
+        font-family: var(--font-body);
+        transition: background-color 0.2s ease;
       }
 
-      .lang-selector button:hover {
-        background-color: var(--signal-dim);
-        color: var(--ink);
-        border-color: var(--signal);
+      .lang-switch:hover {
+        background-color: #eee;
       }
 
-      .social-links {
-        display: flex;
-        gap: 16px;
-      }
-
-      .social-link-icon {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 12px;
-        color: var(--ink-muted);
-        text-decoration: none;
-        letter-spacing: 0.05em;
-        transition: color 0.2s ease;
-      }
-
-      .social-link-icon:hover {
-        color: var(--signal);
-      }
-
-      /* Main Content Column */
-      main {
-        min-width: 0; /* prevent layout overflow in grids */
-        padding-bottom: 48px;
-      }
-
-      section {
-        scroll-margin-top: 48px;
-      }
-
-      /* Hero Section */
-      .hero-section {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        padding: 32px 0 48px 0;
-      }
-
-      .hero-header {
-        opacity: 0;
-        transform: translateY(10px);
-        animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
-      }
-
-      @keyframes fade-up {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .hero-name {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(36px, 6vw, 54px);
-        font-weight: 700;
-        line-height: 1.05;
-        color: var(--ink);
-        margin-top: 8px;
-        letter-spacing: -0.02em;
-      }
-
-      .hero-title {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--signal);
-        letter-spacing: 0.05em;
-        margin-top: 4px;
-        text-transform: uppercase;
-      }
-
-      .signal-container {
-        margin: 16px 0;
-        height: 40px;
-        overflow: hidden;
-      }
-
-      .signal-wave path {
-        stroke: var(--signal);
-        stroke-width: 1.5;
-        fill: none;
-        stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
-        animation: draw-wave 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      }
-
-      @keyframes draw-wave {
-        to {
-          stroke-dashoffset: 0;
-        }
-      }
-
-      .hero-desc {
-        font-family: "IBM Plex Sans", sans-serif;
-        font-size: clamp(16px, 2.5vw, 18px);
-        line-height: 1.6;
-        color: var(--ink);
-        max-width: 720px;
-      }
-
-      /* Section Headings */
-      .section-title {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        color: var(--signal);
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-top: 96px;
-        margin-bottom: 32px;
-        text-transform: uppercase;
-      }
-
-      .title-line {
-        flex-grow: 1;
-        height: 1px;
-        background-color: var(--signal-dim);
-      }
-
-      .title-num {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--ink-muted);
-      }
-
-      /* Cards Structure */
-      .card {
-        background-color: var(--bg-panel);
-        border: 1px solid var(--signal-dim);
-        border-top: 2px solid var(--signal);
-        border-radius: 3px;
-        padding: 32px;
-        margin-bottom: 40px;
-        position: relative;
-      }
-
-      .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 24px;
-        gap: 16px;
-      }
-
-      .card-title {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--ink);
-        margin: 0 0 4px 0;
-      }
-
-      .card-subtitle {
-        font-family: "IBM Plex Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--signal);
-      }
-
-      .card-date {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        color: var(--ink-muted);
-        white-space: nowrap;
-        text-transform: lowercase;
-        letter-spacing: 0.05em;
-        padding-top: 6px;
-      }
-
-      /* Technical List */
-      .card-list {
-        list-style: none;
-        padding-left: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .card-list li {
-        position: relative;
-        padding-left: 20px;
-        line-height: 1.6;
-        color: var(--ink);
-        font-family: "IBM Plex Sans", sans-serif;
-        font-size: 15px;
-      }
-
-      .card-list li::before {
-        content: "▸";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: var(--signal);
-        font-family: "JetBrains Mono", monospace;
-        font-weight: 700;
-      }
-
-      .link-inline {
-        color: var(--signal);
-        text-decoration: none;
-        border-bottom: 1px solid var(--signal-dim);
-        transition: all 0.2s ease;
-      }
-
-      .link-inline:hover {
-        color: var(--ink);
-        border-bottom-color: var(--signal);
-      }
-
-      /* Console Alert for privacy */
-      .console-alert {
-        display: flex;
-        align-items: flex-start;
-        gap: 16px;
-        background-color: rgba(9, 58, 62, 0.4);
-        border: 1px solid var(--signal-dim);
-        padding: 16px;
-        border-radius: 2px;
-        margin-bottom: 32px;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        line-height: 1.6;
-        color: var(--ink-muted);
-      }
-
-      .alert-tag {
-        background-color: var(--signal-dim);
-        color: var(--signal);
-        padding: 2px 8px;
-        font-weight: 700;
-        border-radius: 2px;
-        white-space: nowrap;
-        letter-spacing: 0.05em;
-      }
-
-      /* Technical Diagram Blocks */
-      .diagram-block {
-        width: 100%;
-        border: 1px solid var(--signal-dim);
-        background-color: var(--bg-void);
-        padding: 24px;
-        border-radius: 2px;
-        margin-top: 24px;
-        margin-bottom: 24px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .diagram-svg {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      .diagram-svg text {
-        fill: var(--ink-muted);
-        font-family: "JetBrains Mono", monospace;
-      }
-
-      .diagram-svg text.title-text {
-        fill: var(--signal);
-        font-weight: 700;
-      }
-
-      .diagram-svg text.accent-stroke {
-        fill: var(--signal);
-      }
-
-      .diagram-svg rect,
-      .diagram-svg circle,
-      .diagram-svg path,
-      .diagram-svg line,
-      .diagram-svg polygon {
-        stroke: var(--signal-dim);
-      }
-
-      .diagram-svg [stroke="currentColor"] {
-        stroke: var(--signal);
-      }
-
-      .diagram-svg [stroke="var(--color-obsidian)"] {
-        stroke: var(--signal);
-      }
-
-      .diagram-svg [fill="var(--color-obsidian)"] {
-        fill: var(--signal);
-      }
-
-      .diagram-svg .anim-path {
-        stroke-dasharray: 8;
-        animation: dash 35s linear infinite;
-      }
-
-      @keyframes dash {
-        to {
-          stroke-dashoffset: -1000;
-        }
-      }
-
-      .diagram-caption {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 10px;
-        color: var(--ink-muted);
-        margin-top: 12px;
-        text-align: right;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      /* Technical Skills Grid */
       .skills-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        grid-template-columns: 1fr 3fr;
+        gap: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
       }
 
-      .skills-card {
-        background-color: var(--bg-panel);
-        border: 1px solid var(--signal-dim);
-        border-top: 2px solid var(--signal);
-        border-radius: 3px;
-        padding: 24px;
+      .skills-cat {
+        font-weight: 600;
+        color: var(--text-main);
       }
 
-      .skills-category {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--signal);
-        margin: 0 0 16px 0;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .skills-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+      .contact-links {
         display: flex;
+        gap: 1.5rem;
         flex-wrap: wrap;
-        gap: 8px;
+        font-weight: 500;
       }
 
-      .skills-list li {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        background-color: var(--bg-void);
-        color: var(--ink);
-        border: 1px solid var(--signal-dim);
-        padding: 4px 8px;
-        border-radius: 2px;
-        text-transform: lowercase;
-        letter-spacing: 0.05em;
-      }
-
-      /* Languages Container (under education) */
-      .education-languages {
-        margin-top: 24px;
-        padding-top: 16px;
-        border-top: 1px solid var(--signal-dim);
-      }
-
-      .edu-lang-title {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--signal);
-        margin-bottom: 8px;
-        letter-spacing: 0.05em;
-      }
-
-      .edu-lang-list {
-        font-family: "IBM Plex Sans", sans-serif;
-        font-size: 14px;
-        color: var(--ink-muted);
-      }
-
-      /* Footer structure */
-      .console-footer {
-        margin-top: 96px;
-        border-top: 1px solid var(--signal-dim);
-        padding: 48px 0 24px 0;
-      }
-
-      .footer-cta {
-        margin-bottom: 40px;
-      }
-
-      .footer-cta-text {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(24px, 4vw, 32px);
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        color: var(--ink);
-        margin: 0 0 12px 0;
-      }
-
-      .footer-email {
-        font-family: "JetBrains Mono", monospace;
-        font-size: clamp(14px, 3vw, 18px);
-        color: var(--signal);
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-        transition:
-          border-color 0.2s ease,
-          opacity 0.2s ease;
-        letter-spacing: 0.05em;
-      }
-
-      .footer-email:hover {
-        border-bottom-color: var(--signal);
-        opacity: 0.9;
-      }
-
-      .footer-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 16px;
-        padding-top: 24px;
-        border-top: 1px solid rgba(58, 175, 185, 0.1);
-      }
-
-      .footer-links {
-        display: flex;
-        gap: 24px;
-      }
-
-      .footer-link {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        color: var(--ink-muted);
-        text-decoration: none;
-        letter-spacing: 0.05em;
-        transition: color 0.2s ease;
-      }
-
-      .footer-link:hover {
-        color: var(--signal);
-      }
-
-      .footer-copy {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        color: var(--ink-muted);
-        letter-spacing: 0.05em;
-      }
-
-      /* Screen sizes adaptations (Responsive) */
-      @media (max-width: 850px) {
-        .app-container {
-          grid-template-columns: 1fr;
-          gap: 32px;
-          padding-top: 96px; /* spacing under sticky mobile top nav */
-          padding-left: 16px;
-          padding-right: 16px;
-        }
-
-        aside {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          width: 100%;
-          height: 60px;
-          flex-direction: row;
-          align-items: center;
-          border-right: none;
-          border-bottom: 1px solid var(--signal-dim);
-          background-color: var(--bg-void);
-          padding: 0 16px;
-          z-index: 1000;
-        }
-
-        .sidebar-top {
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          width: auto;
-          gap: 24px;
-        }
-
-        .sidebar-nav ul {
-          flex-direction: row;
-          gap: 12px;
-        }
-
-        .nav-link::before {
-          display: none !important;
-        }
-
-        .nav-text {
-          display: none;
-        }
-
-        .sidebar-bottom {
-          flex-direction: row;
-          align-items: center;
-          gap: 16px;
-        }
-
-        .social-links {
-          display: none; /* redundant, they are already in the footer */
-        }
-
-        .card {
-          padding: 24px;
-        }
-
-        .card-header {
+      @media (max-width: 600px) {
+        .meta {
           flex-direction: column;
-          gap: 8px;
+          gap: 0.2rem;
         }
-
-        .card-date {
-          padding-top: 0;
-        }
-
         .skills-grid {
           grid-template-columns: 1fr;
+          gap: 0.2rem;
+          margin-bottom: 1.5rem;
         }
-
-        .footer-bar {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-
-      /* Reduced Motion */
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation: none !important;
-          transition: none !important;
-          scroll-behavior: auto !important;
-        }
-
-        .hero-header {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-
-        .signal-wave path {
-          stroke-dashoffset: 0 !important;
-        }
-
-        .diagram-svg .anim-path {
-          animation: none !important;
-          stroke-dasharray: none !important;
+        h1 {
+          font-size: 2rem;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Screen Reader Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="container">
+      <header>
+        <div>
+          <h1>Neşetcan Aydoğan</h1>
+          <div class="subtitle" data-i18n="heroSubtitle">
+            Kurucu Ortak & Ürün Mühendisi, Decyra <br />
+            Yazılım & Yapay Zeka Sistemleri Mühendisi
+          </div>
+        </div>
+        <button class="lang-switch" id="lang-btn" onclick="toggleLang()">
+          EN
+        </button>
+      </header>
 
-    <!-- Layout Container -->
-    <div class="app-container">
-      <!-- Sidebar Navigation / Mobile Top Header -->
-      <aside>
-        <div class="sidebar-top">
-          <a
-            href="#overview"
-            class="nav-brand"
-            aria-label="Neşetcan Aydoğan Overview"
+      <section>
+        <h2 data-i18n="aboutTitle">Hakkında</h2>
+        <p data-i18n="aboutText">
+          Yüksek performanslı hesaplama, ajan mimarileri ve uçtan uca ürün
+          geliştirme konularında uzmanlaşan Yazılım ve Yapay Zeka Sistemleri
+          Mühendisi. Temel odak noktam, <strong>Decyra</strong>'da yapay zeka,
+          davranış bilimleri ve yazılım mühendisliğinin kesiştiği noktada
+          pratik, ölçeklenebilir ürünler inşa etmektir. Akademik Ar-Ge
+          titizliğini, hızlı girişimci kültürüyle birleştirerek sıfırdan
+          sistemler kuruyorum.
+        </p>
+      </section>
+
+      <section>
+        <h2 data-i18n="expTitle">Deneyim</h2>
+
+        <div class="section-item">
+          <h3>Decyra</h3>
+          <div class="meta">
+            <span data-i18n="decyraRole">Kurucu Ortak & Ürün Mühendisi</span>
+            <span data-i18n="decyraDate"
+              >Mayıs 2026 - Günümüz &middot; Türkiye</span
+            >
+          </div>
+          <ul>
+            <li data-i18n="decyraDesc1">
+              Kurumların yüksek etkili kararlar almadan önce potansiyel insan
+              tepkilerini test etmelerini ve anlamalarını sağlamak için
+              tasarlanmış yapay zeka destekli bilişsel karar simülasyon
+              platformu Decyra'yı inşa ediyorum.
+            </li>
+            <li data-i18n="decyraDesc2">
+              Ürün vizyonunu çalışan bir teknolojiye dönüştürüyor, teknik
+              mimariyi şekillendiriyor ve otonom LLM ajanları (LangChain, DSPy)
+              üzerinden karmaşık tüketici davranışlarını modelliyorum.
+            </li>
+          </ul>
+        </div>
+
+        <div class="section-item">
+          <h3>AI Lab - Yapay Zeka ve Veri Bilimi Laboratuvarı</h3>
+          <div class="meta">
+            <span data-i18n="ailabRole"
+              >Başkan Yardımcısı, Yazılım Mühendisi</span
+            >
+            <span data-i18n="ailabDate">Ekim 2024 - Günümüz</span>
+          </div>
+          <ul>
+            <li data-i18n="ailabDesc1">
+              Sıfırdan merkezi bir Laboratuvar Yönetim Sistemi (ailab.org.tr)
+              tasarlayıp devreye alarak, 100'den fazla üye için tamamen kağıda
+              dayalı iş akışlarını dijitalleştirdim.
+            </li>
+            <li data-i18n="ailabDesc2">
+              Docker, Nginx ve CloudPanel kullanarak güvenli ve ölçeklenebilir
+              bir Linux sunucu altyapısı kurdum. React 19, Vite ve Tailwind CSS
+              ile frontend mimarisini geliştirdim.
+            </li>
+            <li data-i18n="ailabDesc3">
+              Laboratuvar başkan yardımcılığı rolünü üstlenerek idari ve
+              operasyonel konularda aktif rol oynuyorum.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 data-i18n="projTitle">Seçili Projeler</h2>
+
+        <div class="section-item">
+          <h3 data-i18n="teknoTitle">
+            TEKNOFEST 2026 - Görüntü Eşleştirme ve Takip Sistemi
+          </h3>
+          <div class="meta">
+            <span data-i18n="teknoRole">Bilgisayarlı Görü (CV) Mühendisi</span>
+          </div>
+          <ul>
+            <li data-i18n="teknoDesc1">
+              Havadan video akışlarında dinamik hedefleri tespit edip takip
+              etmek için DINOv2 ve PyTorch (CUDA 12.4) kullanan GPU
+              hızlandırmalı bir bilgisayarlı görü ardışık düzeni geliştirdim.
+            </li>
+            <li data-i18n="teknoDesc2">
+              RTX 4050 GPU'da kare başına 700ms uçtan uca çıkarım (inference)
+              süresine ulaşarak yarışmanın 1000ms sınırını rahatça aştım.
+            </li>
+          </ul>
+        </div>
+
+        <div class="section-item">
+          <h3>TASTE</h3>
+          <div class="meta">
+            <span data-i18n="tasteRole"
+              >Full Stack Geliştirici (Ortak Özelliklere Dayalı Filtreleme
+              Motoru)</span
+            >
+          </div>
+          <ul>
+            <li data-i18n="tasteDesc1">
+              Algoritmik temelleri derinleştirmek için saf Python (pure Python)
+              ile sıfırdan özel bir kullanıcı tabanlı işbirlikçi filtreleme
+              (collaborative filtering) motoru geliştirdim.
+            </li>
+            <li data-i18n="tasteDesc2">
+              10.000 kullanıcı x 1.000 öğelik seyreltik matrisi Intel i7
+              üzerinde 420ms'de işleyerek eşzamanlı eşleştirme sağladım.
+              Veritabanı sorgularını Foreign Key indeksleme ile optimize ettim.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 data-i18n="skillsTitle">Yetenekler</h2>
+        <div class="skills-grid">
+          <div class="skills-cat">Backend & Cloud</div>
+          <div class="skills-list">
+            Python, Node.js, FastAPI, Celery, Redis, PostgreSQL, Docker, Nginx,
+            Linux (SSH)
+          </div>
+        </div>
+        <div class="skills-grid">
+          <div class="skills-cat">Frontend</div>
+          <div class="skills-list">
+            React (v19), Next.js (v14), TypeScript, Vite, Tailwind CSS, HTML5,
+            CSS3
+          </div>
+        </div>
+        <div class="skills-grid">
+          <div class="skills-cat">AI, ML & Data</div>
+          <div class="skills-list">
+            PyTorch, CUDA, DINOv2, LangChain, DSPy, Ollama, Pinecone, Pandas,
+            OpenCV
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 data-i18n="eduTitle">Eğitim</h2>
+        <div class="section-item">
+          <h3>Konya Teknik Üniversitesi</h3>
+          <div class="meta">
+            <span data-i18n="eduDegree"
+              >Bilgisayar Mühendisliği Lisans Programı</span
+            >
+            <span data-i18n="eduDate">Eylül 2024 - Haziran 2028</span>
+          </div>
+          <ul>
+            <li data-i18n="eduDesc1">
+              İlgili Dersler: Algoritmalar (BA), Veri Yapıları (AA), Nesne
+              Yönelimli Programlama (BB).
+            </li>
+            <li data-i18n="eduDesc2">
+              TÜBİTAK 2209-A Araştırmacısı: Büyük ölçekli veri optimizasyonu
+              metodolojileri için RAG ardışık düzenleri ve otonom yapay zeka
+              ajanları geliştiriyorum.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 data-i18n="contactTitle">İletişim</h2>
+        <div class="contact-links">
+          <a href="mailto:nesetcan@decyraapp.com">nesetcan@decyraapp.com</a>
+          <a href="mailto:canaydogan0568@gmail.com">canaydogan0568@gmail.com</a>
+          <a href="https://linkedin.com/in/canaydogantabb" target="_blank"
+            >LinkedIn</a
           >
-            <div class="brand-name">NESETCAN AYDOĞAN</div>
-            <div class="brand-status">
-              <span class="pulse-dot"></span>SYS_ACTIVE
-            </div>
-          </a>
-
-          <nav class="sidebar-nav" aria-label="System Navigation">
-            <ul>
-              <li>
-                <a href="#overview" class="nav-link active">
-                  <span class="nav-num">00</span
-                  ><span class="nav-text">OVERVIEW</span>
-                </a>
-              </li>
-              <li>
-                <a href="#experience" class="nav-link">
-                  <span class="nav-num">01</span
-                  ><span class="nav-text">EXPERIENCE</span>
-                </a>
-              </li>
-              <li>
-                <a href="#projects" class="nav-link">
-                  <span class="nav-num">02</span
-                  ><span class="nav-text">PROJECTS</span>
-                </a>
-              </li>
-              <li>
-                <a href="#skills" class="nav-link">
-                  <span class="nav-num">03</span
-                  ><span class="nav-text">TECH STACK</span>
-                </a>
-              </li>
-              <li>
-                <a href="#education" class="nav-link">
-                  <span class="nav-num">04</span
-                  ><span class="nav-text">EDUCATION</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <a href="https://github.com/nesetcanaydogan" target="_blank"
+            >GitHub</a
+          >
         </div>
-
-        <div class="sidebar-bottom">
-          <div class="lang-selector">
-            <button id="lang-toggle" aria-label="Switch language to Turkish">
-              TR
-            </button>
-          </div>
-
-          <div class="social-links">
-            <a
-              href="mailto:canaydogan0568@gmail.com"
-              class="social-link-icon"
-              title="Email"
-              >✉</a
-            >
-            <a
-              href="https://linkedin.com/in/canaydogantabb"
-              target="_blank"
-              class="social-link-icon"
-              title="LinkedIn"
-              >IN</a
-            >
-            <a
-              href="https://github.com/nesetcanaydogan"
-              target="_blank"
-              class="social-link-icon"
-              title="GitHub"
-              >GIT</a
-            >
-          </div>
-        </div>
-      </aside>
-
-      <!-- Main Grid Content Flow -->
-      <main id="main-content">
-        <!-- HERO / OVERVIEW SECTION -->
-        <section id="overview" class="hero-section">
-          <div class="hero-header">
-            <h1 class="hero-name">NEŞETCAN AYDOĞAN</h1>
-            <h2 class="hero-title" data-i18n="hero_subtitle">
-              Software & AI Systems Engineer
-            </h2>
-          </div>
-
-          <div class="signal-container" aria-hidden="true">
-            <svg
-              class="signal-wave"
-              viewBox="0 0 600 40"
-              width="100%"
-              height="40"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M 0,20 L 220,20 Q 230,20 235,15 T 245,25 T 255,5 T 265,35 T 275,10 T 285,25 T 295,20 L 600,20"
-              />
-            </svg>
-          </div>
-
-          <p class="hero-desc" data-i18n="hero_desc">
-            Software & AI Systems Engineer experienced in high-performance
-            computing, AI agents, and end-to-end product development. Built
-            scalable software systems from digital platforms to GPU-accelerated
-            computer vision applications.
-          </p>
-        </section>
-
-        <!-- EXPERIENCE SECTION -->
-        <section id="experience">
-          <h2 class="section-title">
-            <span class="title-text" data-i18n="sec_experience"
-              >EXPERIENCE</span
-            >
-            <span class="title-line"></span>
-            <span class="title-num">01</span>
-          </h2>
-
-          <!-- Experience Card: Ai Lab -->
-          <article class="card">
-            <div class="card-header">
-              <div class="card-title-group">
-                <h3 class="card-title">
-                  Ai Lab (Ministry of Industry and Technology)
-                </h3>
-                <div class="card-subtitle" data-i18n="exp_ailab_subtitle">
-                  Vice Chair of the Laboratory, Software Engineer
-                </div>
-              </div>
-              <div class="card-date" data-i18n="exp_ailab_date">
-                Oct 2024 – Present
-              </div>
-            </div>
-
-            <ul class="card-list">
-              <li data-i18n="exp_ailab_bullet1">
-                Architected and deployed a centralized Laboratory Management
-                System (live at
-                <a
-                  href="https://ailab.org.tr"
-                  target="_blank"
-                  class="link-inline"
-                  >ailab.org.tr</a
-                >) from scratch successfully digitizing completely paper-based,
-                untrackable workflows for 100+ personnel.
-              </li>
-              <li data-i18n="exp_ailab_bullet2">
-                Orchestrated full-stack deployment utilizing Docker multi-stage
-                builds, Nginx and CloudPanel, establishing a secure and scalable
-                Linux server infrastructure.
-              </li>
-              <li data-i18n="exp_ailab_bullet3">
-                Engineered a responsive frontend architecture with React 19,
-                Vite, and Tailwind CSS, implementing strict Role-Based Access
-                Control (RBAC) and Firebase JWT automatic injection via Axios
-                interceptors.
-              </li>
-              <li data-i18n="exp_ailab_bullet4">
-                Has taken on the role of Vice Chair of the laboratory and is
-                playing an active role in administrative matters.
-              </li>
-            </ul>
-
-            <!-- Supporting System Architecture Diagram -->
-            <div class="diagram-block" aria-hidden="true">
-              <svg
-                class="diagram-svg"
-                viewBox="0 0 640 280"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <pattern
-                  id="card-grid"
-                  width="20"
-                  height="20"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke-width="0.5" />
-                </pattern>
-                <rect width="100%" height="100%" fill="url(#card-grid)" />
-
-                <!-- Client Box -->
-                <rect
-                  x="30"
-                  y="80"
-                  width="150"
-                  height="110"
-                  stroke-width="1.5"
-                />
-                <text
-                  x="45"
-                  y="105"
-                  class="title-text"
-                  font-size="11"
-                  font-weight="bold"
-                >
-                  CLIENT LAYER
-                </text>
-                <text x="45" y="125" font-size="9">— React 19 / Vite</text>
-                <text x="45" y="140" font-size="9">— Axios Interceptor</text>
-                <text x="45" y="155" font-size="9">— Firebase Auth</text>
-                <text
-                  x="45"
-                  y="170"
-                  class="accent-stroke"
-                  font-size="9"
-                  font-weight="bold"
-                  stroke="none"
-                >
-                  [ RBAC active ]
-                </text>
-
-                <!-- Proxy / Infrastructure -->
-                <rect
-                  x="245"
-                  y="95"
-                  width="150"
-                  height="80"
-                  stroke-width="1.5"
-                />
-                <text
-                  x="260"
-                  y="120"
-                  class="title-text"
-                  font-size="11"
-                  font-weight="bold"
-                >
-                  PROXY & PROV.
-                </text>
-                <text x="260" y="140" font-size="9">— Nginx Reverse Proxy</text>
-                <text x="260" y="155" font-size="9">— CloudPanel Admin</text>
-
-                <!-- Backend Services -->
-                <rect
-                  x="460"
-                  y="80"
-                  width="150"
-                  height="110"
-                  stroke-width="1.5"
-                />
-                <text
-                  x="475"
-                  y="105"
-                  class="title-text"
-                  font-size="11"
-                  font-weight="bold"
-                >
-                  BACKEND CORE
-                </text>
-                <text x="475" y="125" font-size="9">— REST APIs</text>
-                <text x="475" y="140" font-size="9">— Docker Container</text>
-                <text x="475" y="155" font-size="9">— PostgreSQL DB</text>
-                <text
-                  x="475"
-                  y="170"
-                  class="accent-stroke"
-                  font-size="9"
-                  font-weight="bold"
-                  stroke="none"
-                >
-                  [ Live System ]
-                </text>
-
-                <!-- Connectors -->
-                <path
-                  class="anim-path"
-                  d="M 180 120 L 245 120"
-                  stroke-width="1.5"
-                  stroke-dasharray="4,4"
-                />
-                <path
-                  class="anim-path"
-                  d="M 245 150 L 180 150"
-                  stroke-width="1.5"
-                />
-                <path
-                  class="anim-path"
-                  d="M 395 120 L 460 120"
-                  stroke-width="1.5"
-                />
-                <path
-                  class="anim-path"
-                  d="M 460 150 L 395 150"
-                  stroke-width="1.5"
-                  stroke-dasharray="4,4"
-                />
-
-                <polygon points="245,120 238,116 238,124" />
-                <polygon points="180,150 187,146 187,154" />
-                <polygon points="460,120 453,116 453,124" />
-                <polygon points="395,150 402,146 402,154" />
-              </svg>
-              <div class="diagram-caption" data-i18n="exp_ailab_caption">
-                Fig. 1: Centralized Management Architecture Flow
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section id="projects">
-          <h2 class="section-title">
-            <span class="title-text" data-i18n="sec_projects"
-              >SELECTED PROJECTS</span
-            >
-            <span class="title-line"></span>
-            <span class="title-num">02</span>
-          </h2>
-
-          <!-- Confidentiality Alert -->
-          <div class="console-alert">
-            <span class="alert-tag">ACCESS: PRIVATE</span>
-            <span class="alert-text" data-i18n="proj_privacy_note"
-              >Most GitHub repositories are private due to active R&D and
-              confidentiality. Contact to discuss technical details and
-              architectural decisions.</span
-            >
-          </div>
-
-          <!-- Project 1: Decyra -->
-          <article class="card">
-            <div class="card-header">
-              <div class="card-title-group">
-                <h3 class="card-title">Decyra</h3>
-                <div class="card-subtitle" data-i18n="proj_decyra_subtitle">
-                  Project-Founder & Systems Architect
-                </div>
-              </div>
-              <div class="card-date" data-i18n="proj_decyra_status">
-                TÜBİTAK 1812 BİGG Candidate
-              </div>
-            </div>
-
-            <ul class="card-list">
-              <li data-i18n="proj_decyra_bullet1">
-                Spearheaded a highly scalable Cognitive Decision Simulation
-                Engine modeling complex consumer behaviors via autonomous LLM
-                agents (LangChain, DSPy).
-              </li>
-              <li data-i18n="proj_decyra_bullet2">
-                Designed a high-performance asynchronous microservices stack
-                using FastAPI, Next.js 14, Celery, Redis, and PostgreSQL to
-                handle intensive agent-based simulations (Mesa, SimPy).
-              </li>
-              <li data-i18n="proj_decyra_bullet3">
-                Optimized LLM prompt contexts and pruned conversation history,
-                reducing token consumption by ~35% and decreasing API latency by
-                500ms.
-              </li>
-              <li data-i18n="proj_decyra_bullet4">
-                Leading the project team through the development process.
-              </li>
-            </ul>
-
-            <!-- Supporting Diagram: Cognitive Simulation Engine -->
-            <div class="diagram-block" aria-hidden="true">
-              <svg
-                class="diagram-svg"
-                viewBox="0 0 640 280"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <!-- Center Hub -->
-                <circle cx="320" cy="140" r="45" stroke-width="1.5" />
-                <text
-                  x="320"
-                  y="137"
-                  text-anchor="middle"
-                  class="title-text"
-                  font-size="10"
-                  font-weight="bold"
-                >
-                  ORCHESTRATOR
-                </text>
-                <text
-                  x="320"
-                  y="150"
-                  text-anchor="middle"
-                  class="accent-stroke"
-                  font-size="9"
-                  font-weight="bold"
-                  stroke="none"
-                >
-                  DSPy / LangChain
-                </text>
-
-                <!-- Satellites (Agents) -->
-                <circle
-                  cx="160"
-                  cy="70"
-                  r="30"
-                  stroke-width="1"
-                  opacity="0.6"
-                />
-                <text x="160" y="73" text-anchor="middle" font-size="8">
-                  Agent A (Buyer)
-                </text>
-                <circle
-                  cx="160"
-                  cy="210"
-                  r="30"
-                  stroke-width="1"
-                  opacity="0.6"
-                />
-                <text x="160" y="213" text-anchor="middle" font-size="8">
-                  Agent B (Seller)
-                </text>
-                <circle
-                  cx="480"
-                  cy="70"
-                  r="30"
-                  stroke-width="1"
-                  opacity="0.6"
-                />
-                <text x="480" y="73" text-anchor="middle" font-size="8">
-                  Agent C (Competitor)
-                </text>
-                <circle
-                  cx="480"
-                  cy="210"
-                  r="30"
-                  stroke-width="1"
-                  opacity="0.6"
-                />
-                <text x="480" y="213" text-anchor="middle" font-size="8">
-                  Agent D (Market)
-                </text>
-
-                <!-- Connection Lines -->
-                <line
-                  class="anim-path"
-                  x1="187"
-                  y1="83"
-                  x2="280"
-                  y2="122"
-                  opacity="0.3"
-                  stroke-width="1.2"
-                  stroke-dasharray="3,3"
-                />
-                <line
-                  class="anim-path"
-                  x1="187"
-                  y1="197"
-                  x2="280"
-                  y2="158"
-                  opacity="0.3"
-                  stroke-width="1.2"
-                  stroke-dasharray="3,3"
-                />
-                <line
-                  class="anim-path"
-                  x1="453"
-                  y1="83"
-                  x2="360"
-                  y2="122"
-                  opacity="0.3"
-                  stroke-width="1.2"
-                />
-                <line
-                  class="anim-path"
-                  x1="453"
-                  y1="197"
-                  x2="360"
-                  y2="158"
-                  opacity="0.3"
-                  stroke-width="1.2"
-                />
-
-                <!-- Queue Stack -->
-                <rect x="550" y="100" width="60" height="80" stroke-width="1" />
-                <line
-                  x1="550"
-                  y1="120"
-                  x2="610"
-                  y2="120"
-                  opacity="0.3"
-                  stroke-width="1"
-                />
-                <line
-                  x1="550"
-                  y1="140"
-                  x2="610"
-                  y2="140"
-                  opacity="0.3"
-                  stroke-width="1"
-                />
-                <line
-                  x1="550"
-                  y1="160"
-                  x2="610"
-                  y2="160"
-                  opacity="0.3"
-                  stroke-width="1"
-                />
-                <text
-                  x="580"
-                  y="90"
-                  text-anchor="middle"
-                  font-size="7"
-                  font-weight="bold"
-                >
-                  CELERY QUEUE
-                </text>
-                <text
-                  x="580"
-                  y="133"
-                  text-anchor="middle"
-                  class="accent-stroke"
-                  font-size="8"
-                  font-weight="bold"
-                  stroke="none"
-                >
-                  REDIS
-                </text>
-                <line
-                  class="anim-path"
-                  x1="365"
-                  y1="140"
-                  x2="550"
-                  y2="140"
-                  stroke-width="1.2"
-                  stroke-dasharray="5,5"
-                />
-              </svg>
-              <div class="diagram-caption" data-i18n="proj_decyra_caption">
-                Fig. 2: Cognitive Simulation Agent Architecture & Work
-                Distribution
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: Image Matching & Tracking -->
-          <article class="card">
-            <div class="card-header">
-              <div class="card-title-group">
-                <h3 class="card-title">Image Matching & Tracking</h3>
-                <div class="card-subtitle" data-i18n="proj_tracking_subtitle">
-                  Computer Vision Engineer
-                </div>
-              </div>
-              <div class="card-date" data-i18n="proj_tracking_status">
-                Active Tracking Pipeline
-              </div>
-            </div>
-
-            <ul class="card-list">
-              <li data-i18n="proj_tracking_bullet1">
-                Developed a GPU-accelerated computer vision pipeline utilizing
-                DINOv2 and PyTorch (CUDA 12.4) to localize and track dynamic,
-                unseen targets in aerial video streams.
-              </li>
-              <li data-i18n="proj_tracking_bullet2">
-                Integrated a Motion-Compensated Kalman Filter with camera
-                telemetry (Dtx, Dty, Z) to maintain target tracking during
-                cross-modality (RGB/Thermal) shifts and environmental
-                occlusions.
-              </li>
-              <li data-i18n="proj_tracking_bullet3">
-                Achieved a 700ms end-to-end inference time per frame on an RTX
-                4050 GPU, comfortably exceeding the related competition's 1000ms
-                maximum threshold limit.
-              </li>
-            </ul>
-
-            <!-- Supporting Diagram: Object Tracking HUD -->
-            <div class="diagram-block" aria-hidden="true">
-              <svg
-                class="diagram-svg"
-                viewBox="0 0 640 280"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="20"
-                  y="20"
-                  width="600"
-                  height="240"
-                  stroke-width="1"
-                  opacity="0.6"
-                />
-                <line
-                  x1="320"
-                  y1="30"
-                  x2="320"
-                  y2="50"
-                  stroke-width="1"
-                  opacity="0.5"
-                />
-                <line
-                  x1="320"
-                  y1="230"
-                  x2="320"
-                  y2="250"
-                  stroke-width="1"
-                  opacity="0.5"
-                />
-                <line
-                  x1="30"
-                  y1="140"
-                  x2="50"
-                  y2="140"
-                  stroke-width="1"
-                  opacity="0.5"
-                />
-                <line
-                  x1="590"
-                  y1="140"
-                  x2="610"
-                  y2="140"
-                  stroke-width="1"
-                  opacity="0.5"
-                />
-
-                <rect
-                  x="240"
-                  y="80"
-                  width="120"
-                  height="120"
-                  stroke-width="1.8"
-                />
-                <line
-                  class="anim-path"
-                  x1="240"
-                  y1="80"
-                  x2="220"
-                  y2="60"
-                  stroke-width="1"
-                />
-                <line
-                  class="anim-path"
-                  x1="360"
-                  y1="80"
-                  x2="380"
-                  y2="60"
-                  stroke-width="1"
-                />
-                <line
-                  class="anim-path"
-                  x1="240"
-                  y1="200"
-                  x2="220"
-                  y2="220"
-                  stroke-width="1"
-                />
-                <line
-                  class="anim-path"
-                  x1="360"
-                  y1="200"
-                  x2="380"
-                  y2="220"
-                  stroke-width="1"
-                />
-
-                <g opacity="0.3">
-                  <line x1="260" y1="100" x2="270" y2="90" stroke-width="1" />
-                  <polygon points="270,90 268,95 264,93" />
-                  <line x1="300" y1="110" x2="315" y2="95" stroke-width="1" />
-                  <polygon points="315,95 313,100 309,98" />
-                  <line x1="330" y1="130" x2="340" y2="120" stroke-width="1" />
-                  <polygon points="340,120 338,125 334,123" />
-                  <line x1="280" y1="150" x2="295" y2="135" stroke-width="1" />
-                  <polygon points="295,135 293,140 289,138" />
-                  <circle cx="300" cy="140" r="3" />
-                </g>
-
-                <line
-                  class="anim-path"
-                  x1="300"
-                  y1="140"
-                  x2="410"
-                  y2="175"
-                  stroke-width="1.5"
-                  stroke-dasharray="4,2"
-                />
-                <circle cx="410" cy="175" r="4" stroke-width="1.5" />
-
-                <text x="40" y="45" font-size="10" font-weight="bold">
-                  TARGET LOCATED
-                </text>
-                <text x="40" y="65" class="title-text" font-size="9">
-                  INF_TIME: 700ms / GPU_RTX4050
-                </text>
-                <text x="40" y="80" font-size="9">MODEL: DINOv2 Backbone</text>
-                <text x="40" y="95" font-size="9">CUDA VERSION: 12.4</text>
-
-                <text x="40" y="210" class="title-text" font-size="9">
-                  TELEMETRY DEVIATION:
-                </text>
-                <text x="40" y="225" font-size="9">
-                  Δtx: 0.142m Δty: -0.089m
-                </text>
-                <text x="40" y="240" font-size="9">
-                  FILTER: Motion-Compensated Kalman
-                </text>
-              </svg>
-              <div class="diagram-caption" data-i18n="proj_tracking_caption">
-                Fig. 3: Real-Time Dynamic Target Bounding & Telemetry Projection
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: TASTE -->
-          <article class="card">
-            <div class="card-header">
-              <div class="card-title-group">
-                <h3 class="card-title">
-                  TASTE - Collaborative Filtering Engine
-                </h3>
-                <div class="card-subtitle" data-i18n="proj_taste_subtitle">
-                  Full Stack Developer
-                </div>
-              </div>
-              <div class="card-date" data-i18n="proj_taste_status">
-                Completed Collaborative Engine
-              </div>
-            </div>
-
-            <ul class="card-list">
-              <li data-i18n="proj_taste_bullet1">
-                Built a custom user-based collaborative filtering engine from
-                scratch in pure Python (computing Cosine Similarity and Pearson
-                Correlation without external ML libraries) to deepen algorithmic
-                foundations.
-              </li>
-              <li data-i18n="proj_taste_bullet2">
-                Developed a robust Node.js Express backend with PostgreSQL and
-                Prisma ORM; optimized database performance from Sequential Scans
-                to Index Scans using targeted Foreign Key indexing.
-              </li>
-              <li data-i18n="proj_taste_bullet3">
-                Processed a 10,000 users × 1,000 items sparse matrix in 420ms on
-                an Intel i7, delivering accurate, real-time "taste-twin"
-                matching.
-              </li>
-            </ul>
-
-            <!-- Supporting Diagram: User-Item Similarity Matrix -->
-            <div class="diagram-block" aria-hidden="true">
-              <svg
-                class="diagram-svg"
-                viewBox="0 0 640 280"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="30"
-                  y="40"
-                  width="180"
-                  height="180"
-                  stroke-width="1"
-                  opacity="0.8"
-                />
-                <g opacity="0.3">
-                  <line
-                    x1="90"
-                    y1="40"
-                    x2="90"
-                    y2="220"
-                    opacity="0.15"
-                    stroke-width="0.8"
-                  />
-                  <line
-                    x1="150"
-                    y1="40"
-                    x2="150"
-                    y2="220"
-                    opacity="0.15"
-                    stroke-width="0.8"
-                  />
-                  <line
-                    x1="30"
-                    y1="100"
-                    x2="210"
-                    y2="100"
-                    opacity="0.15"
-                    stroke-width="0.8"
-                  />
-                  <line
-                    x1="30"
-                    y1="160"
-                    x2="210"
-                    y2="160"
-                    opacity="0.15"
-                    stroke-width="0.8"
-                  />
-
-                  <rect
-                    x="30"
-                    y="40"
-                    width="60"
-                    height="60"
-                    fill="currentColor"
-                    opacity="0.1"
-                  />
-                  <rect
-                    x="150"
-                    y="100"
-                    width="60"
-                    height="60"
-                    fill="currentColor"
-                    opacity="0.1"
-                  />
-                  <rect
-                    x="90"
-                    y="160"
-                    width="60"
-                    height="60"
-                    fill="currentColor"
-                    opacity="0.1"
-                  />
-
-                  <text x="60" y="75" text-anchor="middle" font-size="10">
-                    R_11
-                  </text>
-                  <text x="180" y="135" text-anchor="middle" font-size="10">
-                    R_23
-                  </text>
-                  <text x="120" y="195" text-anchor="middle" font-size="10">
-                    R_32
-                  </text>
-                </g>
-                <text
-                  x="120"
-                  y="240"
-                  text-anchor="middle"
-                  font-size="9"
-                  font-weight="bold"
-                >
-                  10k x 1k Sparse Matrix
-                </text>
-
-                <!-- Vector Space Coordinates -->
-                <line
-                  x1="320"
-                  y1="210"
-                  x2="580"
-                  y2="210"
-                  stroke-width="1"
-                  opacity="0.6"
-                />
-                <line
-                  x1="320"
-                  y1="210"
-                  x2="320"
-                  y2="30"
-                  stroke-width="1"
-                  opacity="0.6"
-                />
-
-                <!-- User A Vector -->
-                <line
-                  class="anim-path"
-                  x1="320"
-                  y1="210"
-                  x2="490"
-                  y2="70"
-                  stroke-width="2"
-                />
-                <polygon points="490,70 482,75 486,81" fill="currentColor" />
-                <text
-                  x="500"
-                  y="70"
-                  class="title-text"
-                  font-size="10"
-                  font-weight="bold"
-                >
-                  User_u
-                </text>
-
-                <!-- User B Vector -->
-                <line
-                  class="anim-path"
-                  x1="320"
-                  y1="210"
-                  x2="430"
-                  y2="120"
-                  stroke-width="2"
-                />
-                <polygon points="430,120 422,123 427,130" fill="currentColor" />
-                <text
-                  x="440"
-                  y="125"
-                  class="title-text"
-                  font-size="10"
-                  font-weight="bold"
-                >
-                  User_v
-                </text>
-
-                <path
-                  d="M 370 210 A 50 50 0 0 0 355 180"
-                  stroke-width="1"
-                  fill="none"
-                />
-                <text x="375" y="190" font-size="11">θ</text>
-
-                <text x="320" y="240" class="title-text" font-size="10">
-                  Cosine Sim(u, v) = cos(θ) = 0.89
-                </text>
-                <text x="320" y="255" font-size="9">
-                  Processing Speed: 420ms (pure Python)
-                </text>
-              </svg>
-              <div class="diagram-caption" data-i18n="proj_taste_caption">
-                Fig. 4: Algorithmic Vector Similarity Plane & Grid Sparsity
-                Representation
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <!-- TECHNICAL SKILLS SECTION -->
-        <section id="skills">
-          <h2 class="section-title">
-            <span class="title-text" data-i18n="sec_skills"
-              >TECHNICAL SKILLS</span
-            >
-            <span class="title-line"></span>
-            <span class="title-num">03</span>
-          </h2>
-
-          <div class="skills-grid">
-            <div class="skills-card">
-              <h3 class="skills-category" data-i18n="skills_backend">
-                Backend & Cloud
-              </h3>
-              <ul class="skills-list">
-                <li>Python</li>
-                <li>Node.js</li>
-                <li>FastAPI</li>
-                <li>Celery</li>
-                <li>Redis</li>
-                <li>PostgreSQL</li>
-                <li>Docker</li>
-                <li>Nginx</li>
-                <li>Linux (SSH)</li>
-              </ul>
-            </div>
-
-            <div class="skills-card">
-              <h3 class="skills-category" data-i18n="skills_frontend">
-                Frontend
-              </h3>
-              <ul class="skills-list">
-                <li>React (v19)</li>
-                <li>Next.js (v14)</li>
-                <li>TypeScript</li>
-                <li>Vite</li>
-                <li>Tailwind CSS</li>
-              </ul>
-            </div>
-
-            <div class="skills-card">
-              <h3 class="skills-category" data-i18n="skills_ai">
-                AI, ML & Data
-              </h3>
-              <ul class="skills-list">
-                <li>PyTorch</li>
-                <li>CUDA</li>
-                <li>DINOv2</li>
-                <li>LangChain</li>
-                <li>DSPy</li>
-                <li>Ollama</li>
-                <li>Pinecone</li>
-                <li>Pandas</li>
-                <li>OpenCV</li>
-              </ul>
-            </div>
-
-            <div class="skills-card">
-              <h3 class="skills-category" data-i18n="skills_core">
-                Core Concepts
-              </h3>
-              <ul class="skills-list">
-                <li>C</li>
-                <li>Java</li>
-                <li>Basic Data Structures & Algorithms</li>
-                <li>Object-Oriented Programming (OOP)</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- EDUCATION SECTION -->
-        <section id="education">
-          <h2 class="section-title">
-            <span class="title-text" data-i18n="sec_education">EDUCATION</span>
-            <span class="title-line"></span>
-            <span class="title-num">04</span>
-          </h2>
-
-          <article class="card">
-            <div class="card-header">
-              <div class="card-title-group">
-                <h3 class="card-title">Konya Technical University</h3>
-                <div class="card-subtitle" data-i18n="edu_uni_subtitle">
-                  B.S. in Computer Engineering
-                </div>
-              </div>
-              <div class="card-date" data-i18n="edu_uni_date">
-                Sep 2024 – Jun 2028
-              </div>
-            </div>
-
-            <ul class="card-list">
-              <li data-i18n="edu_uni_bullet1">
-                Some Relevant Coursework: Data Structures (AA), Algorithms (BA),
-                Object-Oriented Programming (BA).
-              </li>
-              <li data-i18n="edu_uni_bullet2">
-                TÜBITAK 2209-A Researcher: Partnering with academic mentors,
-                students for an eco-friendly recycling project to develop ML
-                Models and autonomous AI technologies for large-scale data
-                optimization methodologies.
-              </li>
-            </ul>
-
-            <div class="education-languages">
-              <h4 class="edu-lang-title" data-i18n="edu_lang_title">
-                LANGUAGES
-              </h4>
-              <p class="edu-lang-list" data-i18n="edu_lang_list">
-                English (C1) / German (A2) / French (A1)
-              </p>
-            </div>
-          </article>
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="console-footer">
-          <div class="footer-cta">
-            <h2 class="footer-cta-text" data-i18n="footer_cta">
-              Let's build the future together.
-            </h2>
-            <a href="mailto:canaydogan0568@gmail.com" class="footer-email"
-              >canaydogan0568@gmail.com</a
-            >
-          </div>
-
-          <div class="footer-bar">
-            <div class="footer-links">
-              <a href="mailto:canaydogan0568@gmail.com" class="footer-link"
-                >EMAIL</a
-              >
-              <a
-                href="https://linkedin.com/in/canaydogantabb"
-                target="_blank"
-                class="footer-link"
-                >LINKEDIN</a
-              >
-              <a
-                href="https://github.com/nesetcanaydogan"
-                target="_blank"
-                class="footer-link"
-                >GITHUB</a
-              >
-              <a href="/master.html" class="footer-link">Apolitig Store</a>
-            </div>
-            <span class="footer-copy" data-i18n="footer_copy"
-              >© 2026 Neşetcan Aydoğan. i18n was used for the translation.</span
-            >
-          </div>
-        </footer>
-      </main>
+      </section>
     </div>
 
-    <!-- Multilingual Translation Script and Interaction Logic -->
     <script>
-      // Core Translation Dictionary (EN & TR)
-      const TRANSLATIONS = {
-        en: {
-          hero_tag: "// SYSTEM OVERVIEW",
-          hero_subtitle: "Software & AI Systems Engineer",
-          hero_desc:
-            "Software & AI Systems Engineer experienced in high-performance computing, AI agents, and end-to-end product development. Built scalable software systems from digital platforms to GPU-accelerated computer vision applications.",
-
-          sec_experience: "EXPERIENCE",
-          sec_projects: "SELECTED PROJECTS",
-          sec_skills: "TECHNICAL SKILLS",
-          sec_education: "EDUCATION",
-
-          exp_ailab_subtitle: "Vice Chair of the Laboratory, Software Engineer",
-          exp_ailab_date: "Oct 2024 – Present",
-          exp_ailab_bullet1:
-            'Architected and deployed a centralized Laboratory Management System (live at <a href="https://ailab.org.tr" target="_blank" class="link-inline">ailab.org.tr</a>) from scratch successfully digitizing completely paper-based, untrackable workflows for 100+ personnel.',
-          exp_ailab_bullet2:
-            "Orchestrated full-stack deployment utilizing Docker multi-stage builds, Nginx and CloudPanel, establishing a secure and scalable Linux server infrastructure.",
-          exp_ailab_bullet3:
-            "Engineered a responsive frontend architecture with React 19, Vite, and Tailwind CSS, implementing strict Role-Based Access Control (RBAC) and Firebase JWT automatic injection via Axios interceptors.",
-          exp_ailab_bullet4:
-            "Has taken on the role of Vice Chair of the laboratory and is playing an active role in administrative matters.",
-          exp_ailab_caption: "Fig. 1: Centralized Management Architecture Flow",
-
-          proj_privacy_note:
-            "ACCESS: PRIVATE — Most GitHub repositories are private due to active R&D and confidentiality. Contact to discuss technical details and architectural decisions.",
-
-          proj_decyra_subtitle: "Project-Founder & Systems Architect",
-          proj_decyra_status: "TÜBİTAK 1812 BİGG Candidate",
-          proj_decyra_bullet1:
-            "Spearheaded a highly scalable Cognitive Decision Simulation Engine modeling complex consumer behaviors via autonomous LLM agents (LangChain, DSPy).",
-          proj_decyra_bullet2:
-            "Designed a high-performance asynchronous microservices stack using FastAPI, Next.js 14, Celery, Redis, and PostgreSQL to handle intensive agent-based simulations (Mesa, SimPy).",
-          proj_decyra_bullet3:
-            "Optimized LLM prompt contexts and pruned conversation history, reducing token consumption by ~35% and decreasing API latency by 500ms.",
-          proj_decyra_bullet4:
-            "Leading the project team through the development process.",
-          proj_decyra_caption:
-            "Fig. 2: Cognitive Simulation Agent Architecture & Work Distribution",
-
-          proj_tracking_subtitle: "Computer Vision Engineer",
-          proj_tracking_status: "Active Tracking Pipeline",
-          proj_tracking_bullet1:
-            "Developed a GPU-accelerated computer vision pipeline utilizing DINOv2 and PyTorch (CUDA 12.4) to localize and track dynamic, unseen targets in aerial video streams.",
-          proj_tracking_bullet2:
-            "Integrated a Motion-Compensated Kalman Filter with camera telemetry (Dtx, Dty, Z) to maintain target tracking during cross-modality (RGB/Thermal) shifts and environmental occlusions.",
-          proj_tracking_bullet3:
-            "Achieved a 700ms end-to-end inference time per frame on an RTX 4050 GPU, comfortably exceeding the related competition's 1000ms maximum threshold limit.",
-          proj_tracking_caption:
-            "Fig. 3: Real-Time Dynamic Target Bounding & Telemetry Projection",
-
-          proj_taste_subtitle: "Full Stack Developer",
-          proj_taste_status: "Completed Collaborative Engine",
-          proj_taste_bullet1:
-            "Built a custom user-based collaborative filtering engine from scratch in pure Python (computing Cosine Similarity and Pearson Correlation without external ML libraries) to deepen algorithmic foundations.",
-          proj_taste_bullet2:
-            "Developed a robust Node.js Express backend with PostgreSQL and Prisma ORM; optimized database performance from Sequential Scans to Index Scans using targeted Foreign Key indexing.",
-          proj_taste_bullet3:
-            'Processed a 10,000 users × 1,000 items sparse matrix in 420ms on an Intel i7, delivering accurate, real-time "taste-twin" matching.',
-          proj_taste_caption:
-            "Fig. 4: Algorithmic Vector Similarity Plane & Grid Sparsity Representation",
-
-          skills_backend: "Backend & Cloud",
-          skills_frontend: "Frontend",
-          skills_ai: "AI, ML & Data",
-          skills_core: "Core Concepts",
-
-          edu_uni_subtitle: "B.S. in Computer Engineering",
-          edu_uni_date: "Sep 2024 – Jun 2028",
-          edu_uni_bullet1:
-            "Some Relevant Coursework: Data Structures (AA), Algorithms (BA), Object-Oriented Programming (BA).",
-          edu_uni_bullet2:
-            "TÜBİTAK 2209-A Researcher: Partnering with academic mentors, students for an eco-friendly recycling project to develop ML Models and autonomous AI technologies for large-scale data optimization methodologies.",
-          edu_lang_title: "LANGUAGES",
-          edu_lang_list: "English (C1) / German (A2) / French (A1)",
-
-          footer_cta: "Let's build the future together.",
-          footer_copy:
-            "© 2026 Neşetcan Aydoğan. i18n was used for the translation.",
-        },
+      const i18n = {
         tr: {
-          hero_tag: "// SİSTEM ANALİZİ",
-          hero_subtitle: "Yazılım & Yapay Zeka Sistemleri Mühendisi",
-          hero_desc:
-            "Yüksek performanslı hesaplama, yapay zeka ajanları ve uçtan uca ürün geliştirme konularında deneyimli Yazılım ve Yapay Zeka Sistemleri Mühendisi. Dijital platformlardan GPU hızlandırmalı bilgisayarlı görü uygulamalarına kadar ölçeklenebilir yazılım sistemleri geliştirdi.",
-
-          sec_experience: "DENEYİM",
-          sec_projects: "SEÇİLMİŞ PROJELER",
-          sec_skills: "TEKNİK YETKİNLİKLER",
-          sec_education: "EĞİTİM",
-
-          exp_ailab_subtitle:
-            "Laboratuvar Başkan Yardımcısı, Yazılım Mühendisi",
-          exp_ailab_date: "Eki 2024 – Günümüz",
-          exp_ailab_bullet1:
-            '100\'den fazla personelin tamamen kağıt üzerindeki, takip edilemeyen iş akışlarını başarıyla dijitalleştiren merkezi bir Laboratuvar Yönetim Sistemi\'ni (<a href="https://ailab.org.tr" target="_blank" class="link-inline">ailab.org.tr</a>) sıfırdan tasarladım ve devreye aldım.',
-          exp_ailab_bullet2:
-            "Docker çok aşamalı derlemeleri, Nginx ve CloudPanel kullanarak tam yığın dağıtımı koordine ettim ve güvenli, ölçeklenebilir bir Linux sunucu altyapısı kurdum.",
-          exp_ailab_bullet3:
-            "React 19, Vite ve Tailwind CSS ile duyarlı bir ön uç mimarisi geliştirdim; katı Rol Tabanlı Erişim Kontrolü (RBAC) ve Axios interceptor'ları aracılığıyla Firebase JWT otomatik enjeksiyonunu uyguladım.",
-          exp_ailab_bullet4:
-            "Laboratuvarın Başkan Yardımcılığı görevini üstlendim ve idari konularda aktif rol oynamaktayım.",
-          exp_ailab_caption: "Şekil 1: Merkezi Yönetim Mimarisi Akışı",
-
-          proj_privacy_note:
-            "ERİŞİM: ÖZEL — Gizlilik ve aktif Ar-Ge nedeniyle çoğu GitHub deposu gizlidir. Teknik detayları ve mimari kararları görüşmek için iletişime geçin.",
-
-          proj_decyra_subtitle: "Proje Kurucusu & Sistem Mimarı",
-          proj_decyra_status: "TÜBİTAK 1812 BİGG Adayı",
-          proj_decyra_bullet1:
-            "Otonom YZ ajanları (LangChain, DSPy) aracılığıyla karmaşık tüketici davranışlarını modelleyen, yüksek düzeyde ölçeklenebilir bir Bilişsel Karar Simülasyon Motoru'nun geliştirilmesine öncülük ettim.",
-          proj_decyra_bullet2:
-            "Yoğun ajan tabanlı simülasyonları (Mesa, SimPy) işlemek üzere FastAPI, Next.js 14, Celery, Redis ve PostgreSQL kullanan yüksek performanslı asenkron bir mikro hizmet yığını tasarladım.",
-          proj_decyra_bullet3:
-            "LLM yönlendirme bağlamlarını optimize ederek ve konuşma geçmişini budayarak token tüketimini yaklaşık %35 oranında azalttım ve API gecikmesini 500ms düşürdüm.",
-          proj_decyra_bullet4:
-            "Proje ekibine geliştirme sürecinde liderlik ediyorum.",
-          proj_decyra_caption:
-            "Şekil 2: Bilişsel Simülasyon Ajan Mimarisi ve İş Dağılımı",
-
-          proj_tracking_subtitle: "Bilgisayarlı Görü Mühendisi",
-          proj_tracking_status: "Aktif Takip Boru Hattı",
-          proj_tracking_bullet1:
-            "Havadan alınan video akışlarında dinamik ve daha önce görülmemiş hedefleri tespit etmek ve takip etmek için DINOv2 ve PyTorch (CUDA 12.4) kullanan GPU hızlandırmalı bir bilgisayarlı görü boru hattı geliştirdim.",
-          proj_tracking_bullet2:
-            "Çapraz modlu (RGB/Termal) geçişler ve çevresel engellenmeler (occlusions) sırasında hedef takibini sürdürmek için kamera telemetrisi (Dtx, Dty, Z) ile entegre bir Hareket Dengelemeli Kalman Filtresi uyguladım.",
-          proj_tracking_bullet3:
-            "RTX 4050 GPU üzerinde kare başına 700ms uçtan uca çıkarım (inference) süresi elde ederek ilgili yarışmanın 1000ms'lik maksimum eşik sınırını rahatça aştım.",
-          proj_tracking_caption:
-            "Şekil 3: Gerçek Zamanlı Dinamik Hedef Sınırlandırma ve Telemetri Projeksiyonu",
-
-          proj_taste_subtitle: "Tam Yığın Geliştirici",
-          proj_taste_status: "İşbirlikçi Filtreleme Motoru",
-          proj_taste_bullet1:
-            "Algoritmik temelleri derinleştirmek amacıyla harici makine öğrenimi kütüphaneleri kullanmadan saf Python ile sıfırdan özel bir kullanıcı tabanlı işbirlikçi filtreleme motoru geliştirdim (Kosinüs Benzerliği ve Pearson Korelasyonu hesaplayarak).",
-          proj_taste_bullet2:
-            "PostgreSQL ve Prisma ORM ile sağlam bir Node.js Express arka ucu geliştirdim; hedeflenen Yabancı Anahtar (Foreign Key) indekslemesi kullanarak veritabanı performansını Sıralı Taramalardan İndeks Taramalarına optimize ettim.",
-          proj_taste_bullet3:
-            "10.000 kullanıcı × 1.000 ürünlük seyrek (sparse) bir matrisi Intel i7 üzerinde 420ms'de işleyerek doğru, gerçek zamanlı 'lezzet ikizi' (taste-twin) eşleştirmesi sundum.",
-          proj_taste_caption:
-            "Şekil 4: Algoritma Vektör Benzerlik Düzlemi ve Izgara Seyreklik Temsili",
-
-          skills_backend: "Arka Uç & Bulut",
-          skills_frontend: "Ön Uç",
-          skills_ai: "YZ, MO & Veri",
-          skills_core: "Temel Kavramlar",
-
-          edu_uni_subtitle: "Bilgisayar Mühendisliği Lisans",
-          edu_uni_date: "Eyl 2024 – Haz 2028",
-          edu_uni_bullet1:
-            "İlgili bazı dersler: Veri Yapıları (AA), Algoritmalar (BA), Nesne Yönelimli Programlama (BA).",
-          edu_uni_bullet2:
-            "TÜBİTAK 2209-A Araştırmacısı: Geri dönüşüm projesi için makine öğrenimi modelleri ve büyük ölçekli veri optimizasyon metodolojileri için otonom YZ teknolojileri geliştirmek üzere akademik danışmanlar ve öğrencilerle ortaklık yapıyorum.",
-          edu_lang_title: "DİLLER",
-          edu_lang_list: "İngilizce (C1) / Almanca (A2) / Fransızca (A1)",
-
-          footer_cta: "Geleceği birlikte inşa edelim.",
-          footer_copy:
-            "© 2026 Neşetcan Aydoğan. Çeviri için i18n kullanılmıştır.",
+          heroSubtitle:
+            "Kurucu Ortak & Ürün Mühendisi, Decyra <br> Yazılım & Yapay Zeka Sistemleri Mühendisi",
+          aboutTitle: "Hakkında",
+          aboutText:
+            "Yüksek performanslı hesaplama, ajan mimarileri ve uçtan uca ürün geliştirme konularında uzmanlaşmış Yazılım ve Yapay Zeka Sistemleri Mühendisi. Temel odak noktam, <strong>Decyra</strong>'da yapay zeka, davranış bilimleri ve yazılım mühendisliğinin kesiştiği noktada pratik, ölçeklenebilir ürünler inşa etmektir. Akademik Ar-Ge titizliğini, hızlı girişimci icrasıyla birleştirerek sıfırdan sistemler kuruyorum.",
+          expTitle: "Deneyim",
+          decyraRole: "Kurucu Ortak & Ürün Mühendisi",
+          decyraDate: "Mayıs 2026 - Günümüz &middot; Konya, Türkiye",
+          decyraDesc1:
+            "Kurumların yüksek etkili kararlar almadan önce potansiyel insan tepkilerini test etmelerini ve anlamalarını sağlamak için tasarlanmış yapay zeka destekli bilişsel karar simülasyon platformu Decyra'yı inşa ediyorum.",
+          decyraDesc2:
+            "Ürün vizyonunu çalışan bir teknolojiye dönüştürüyor, teknik mimariyi şekillendiriyor ve otonom LLM ajanları (LangChain, DSPy) üzerinden karmaşık tüketici davranışlarını modelliyorum.",
+          ailabRole: "Başkan Yardımcısı, Yazılım Mühendisi",
+          ailabDate: "Ekim 2024 - Günümüz",
+          ailabDesc1:
+            "Sıfırdan merkezi bir Laboratuvar Yönetim Sistemi (ailab.org.tr) tasarlayıp devreye alarak, 100'den fazla üye için tamamen kağıda dayalı iş akışlarını dijitalleştirdim.",
+          ailabDesc2:
+            "Docker, Nginx ve CloudPanel kullanarak güvenli ve ölçeklenebilir bir Linux sunucu altyapısı kurdum. React 19, Vite ve Tailwind CSS ile frontend mimarisini geliştirdim.",
+          ailabDesc3:
+            "Laboratuvar başkan yardımcılığı rolünü üstlenerek idari ve operasyonel konularda aktif rol oynuyorum.",
+          projTitle: "Seçili Projeler",
+          teknoTitle: "TEKNOFEST 2026 - Görüntü Eşleştirme ve Takip Sistemi",
+          teknoRole: "Bilgisayarlı Görü (CV) Mühendisi",
+          teknoDesc1:
+            "Havadan video akışlarında dinamik hedefleri tespit edip takip etmek için DINOv2 ve PyTorch (CUDA 12.4) kullanan GPU hızlandırmalı bir bilgisayarlı görü ardışık düzeni geliştirdim.",
+          teknoDesc2:
+            "RTX 4050 GPU'da kare başına 700ms uçtan uca çıkarım (inference) süresine ulaşarak yarışmanın 1000ms sınırını rahatça aştım.",
+          tasteRole: "Full Stack Geliştirici (İşbirlikçi Filtreleme Motoru)",
+          tasteDesc1:
+            "Algoritmik temelleri derinleştirmek için saf Python (pure Python) ile sıfırdan özel bir kullanıcı tabanlı işbirlikçi filtreleme (collaborative filtering) motoru geliştirdim.",
+          tasteDesc2:
+            "10.000 kullanıcı x 1.000 öğelik seyreltik matrisi Intel i7 üzerinde 420ms'de işleyerek eşzamanlı eşleştirme sağladım. Veritabanı sorgularını Foreign Key indeksleme ile optimize ettim.",
+          skillsTitle: "Yetenekler",
+          eduTitle: "Eğitim",
+          eduDegree: "Bilgisayar Mühendisliği Lisans Programı",
+          eduDate: "Eylül 2024 - Haziran 2028",
+          eduDesc1:
+            "İlgili Dersler: Algoritmalar (BA), Veri Yapıları (AA), Nesne Yönelimli Programlama.",
+          eduDesc2:
+            "TÜBİTAK 2209-A Araştırmacısı: Büyük ölçekli veri optimizasyonu metodolojileri için RAG ardışık düzenleri ve otonom yapay zeka ajanları geliştiriyorum.",
+          contactTitle: "İletişim",
+        },
+        en: {
+          heroSubtitle:
+            "Co-Founder & Product Engineer, Decyra <br> Software & AI Systems Engineer",
+          aboutTitle: "About",
+          aboutText:
+            "Software & AI Systems Engineer specializing in high-performance computing, agentic architectures, and end-to-end product delivery. My core focus is building a practical, scalable product at <strong>Decyra</strong> at the intersection of AI, behavioral science, and software engineering. I combine academic R&D rigor with rapid startup execution to build systems from scratch.",
+          expTitle: "Experience",
+          decyraRole: "Co-Founder & Product Engineer",
+          decyraDate: "May 2026 - Present &middot; Türkiye",
+          decyraDesc1:
+            "Building Decyra, an AI-powered cognitive decision simulation platform designed to help organizations test and understand potential human responses before making high-impact decisions.",
+          decyraDesc2:
+            "Turning the product vision into working technology, shaping the technical architecture, and modeling complex consumer behaviors via autonomous LLM agents (LangChain, DSPy).",
+          ailabRole: "Vice President, Software Engineer",
+          ailabDate: "Oct 2024 - Present",
+          ailabDesc1:
+            "Architected and deployed a centralized Laboratory Management System (ailab.org.tr) from scratch, successfully digitizing completely paper-based, untrackable workflows for 100+ laboratory personnel.",
+          ailabDesc2:
+            "Orchestrated full-stack deployment utilizing Docker, Nginx, and CloudPanel. Engineered a responsive frontend architecture with React 19, Vite, and Tailwind CSS.",
+          ailabDesc3:
+            "Assumed the role of Vice President of the laboratory, playing an active role in administrative and operational matters.",
+          projTitle: "Selected Projects",
+          teknoTitle: "TEKNOFEST 2026 - Image Matching & Tracking",
+          teknoRole: "Computer Vision Engineer",
+          teknoDesc1:
+            "Developed a GPU-accelerated computer vision pipeline utilizing DINOv2 and PyTorch (CUDA 12.4) to localize and track dynamic, unseen targets in aerial video streams.",
+          teknoDesc2:
+            "Achieved a 700ms end-to-end inference time per frame on an RTX 4050 GPU, comfortably exceeding the competition's 1000ms maximum threshold limit.",
+          tasteRole: "Full Stack Developer (Collaborative Filtering Engine)",
+          tasteDesc1:
+            "Built a custom user-based collaborative filtering engine from scratch in pure Python to deepen algorithmic foundations.",
+          tasteDesc2:
+            "Processed a 10,000 users x 1,000 items sparse matrix in 420ms on an Intel i7. Optimized database performance using targeted Foreign Key indexing.",
+          skillsTitle: "Skills",
+          eduTitle: "Education",
+          eduDegree: "B.S. in Computer Engineering",
+          eduDate: "Sep 2024 - Jun 2028",
+          eduDesc1:
+            "Relevant Coursework: Data Structures (AA), Algorithms (BA), Object-Oriented Programming.",
+          eduDesc2:
+            "TÜBİTAK 2209-A Researcher: Partnering with academic mentors to develop RAG pipelines and autonomous AI agents for large-scale data optimization methodologies.",
+          contactTitle: "Contact",
         },
       };
 
-      // State Variables
-      let appState = {
-        lang: "en",
-      };
+      let currentLang = "tr";
 
-      // Preferences setup
-      function initPreferences() {
-        // Language Check
-        const savedLang = localStorage.getItem("lang");
-        const browserLang = navigator.language || navigator.userLanguage;
-        if (savedLang) {
-          appState.lang = savedLang;
-        } else if (browserLang && browserLang.startsWith("tr")) {
-          appState.lang = "tr";
-        }
-
-        applyLanguage(appState.lang);
-      }
-
-      // Translate DOM elements
-      function applyLanguage(lang) {
-        document.documentElement.lang = lang;
-
-        const titles = {
-          en: "Neşetcan Aydoğan — Software & AI Systems Engineer",
-          tr: "Neşetcan Aydoğan — Yazılım & Yapay Zeka Sistemleri Mühendisi",
-        };
-        document.title = titles[lang];
-
-        document.querySelectorAll("[data-i18n]").forEach((element) => {
-          const key = element.getAttribute("data-i18n");
-          if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
-            element.innerHTML = TRANSLATIONS[lang][key];
+      function toggleLang() {
+        currentLang = currentLang === "tr" ? "en" : "tr";
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (i18n[currentLang][key]) {
+            el.innerHTML = i18n[currentLang][key];
           }
         });
-
-        const langBtn = document.getElementById("lang-toggle");
-        if (langBtn) {
-          langBtn.textContent = lang === "en" ? "TR" : "EN";
-          langBtn.setAttribute(
-            "aria-label",
-            lang === "en" ? "Türkçe diline geç" : "Switch to English",
-          );
-        }
+        document.getElementById("lang-btn").textContent =
+          currentLang === "tr" ? "EN" : "TR";
+        document.documentElement.lang = currentLang;
       }
-
-      // Toggle Language Handler
-      function toggleLanguage() {
-        appState.lang = appState.lang === "en" ? "tr" : "en";
-        localStorage.setItem("lang", appState.lang);
-
-        const mainEl = document.querySelector("main");
-        if (mainEl) {
-          mainEl.style.opacity = 0;
-          mainEl.style.transition = "opacity 0.12s ease";
-          setTimeout(() => {
-            applyLanguage(appState.lang);
-            mainEl.style.opacity = 1;
-          }, 120);
-        } else {
-          applyLanguage(appState.lang);
-        }
-      }
-
-      // Scroll Spy for Sidebar links
-      function initScrollSpy() {
-        const sections = document.querySelectorAll("section[id]");
-        const navLinks = document.querySelectorAll(".nav-link");
-
-        function spy() {
-          const scrollPos =
-            window.scrollY || document.documentElement.scrollTop;
-
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 120;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute("id");
-
-            if (
-              scrollPos >= sectionTop &&
-              scrollPos < sectionTop + sectionHeight
-            ) {
-              navLinks.forEach((link) => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === `#${sectionId}`) {
-                  link.classList.add("active");
-                }
-              });
-            }
-          });
-        }
-
-        window.addEventListener("scroll", spy);
-        spy(); // run initial
-      }
-
-      // Initialize logic
-      document.addEventListener("DOMContentLoaded", () => {
-        initPreferences();
-        initScrollSpy();
-
-        const langToggleBtn = document.getElementById("lang-toggle");
-        if (langToggleBtn) {
-          langToggleBtn.addEventListener("click", toggleLanguage);
-        }
-      });
     </script>
   </body>
 </html>
